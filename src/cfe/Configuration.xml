@@ -43,8 +43,8 @@
 			<DefaultRunMode>ManagedApplication</DefaultRunMode>
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
-			<Vendor/>
-			<Version/>
+			<Vendor>ООО «ВиикоСервис»</Vendor>
+			<Version>1.0.0</Version>
 			<ObjectAutonumerationMode>NotAutoFree</ObjectAutonumerationMode>
 		</Properties>
 		<ChildObjects>
