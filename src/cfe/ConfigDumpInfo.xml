@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.20">
+	<ConfigVersions>
+		<Metadata name="Catalog.OData4_Профили" id="e2fd59cc-75bb-4a84-b8eb-df5dfc6333a8" configVersion="1b83589616dbbb0b94f80a52884e114c8332c6b8">
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ИсключённыеПоля.Attribute.Поле" id="0ca94d0c-f05c-4972-b6f0-d702a26fdb90"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.Права.Attribute.Операция" id="32572b05-b27d-4e5d-aa10-0f24527030d7"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ИсключённыеПоля.Attribute.Объект" id="5583a5fb-75eb-4d13-87a3-081cb5e87b67"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ЛимитыЧастоты.Attribute.Секунд" id="5745ca93-dc70-4e2a-883c-b5b67dff3149"/>
+			<Metadata name="Catalog.OData4_Профили.Attribute.НаибольшийTop" id="58e95c57-15f6-476b-a782-f3415b7f84a0"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.Права.Attribute.Разрешено" id="7cba1029-9a15-4fbd-85c9-d24412e269b3"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.Права.Attribute.Объект" id="7fd3eb09-ee1a-41c1-a1c6-3fa1781e69f7"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыОбъектов" id="80ed8c41-f226-4fb3-9e74-bcb0dca3c9f6"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ИсключённыеПоля.Attribute.ТабличнаяЧасть" id="8bca060d-e6c3-4188-b938-7e47a1c4bc89"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыОбъектов.Attribute.Выражение" id="8ed6e492-8bdf-4540-a48e-9018c41a3b60"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыШаблоны.Attribute.Реквизит" id="92b733f1-c41f-48ed-b0af-de3596c01bf6"/>
+			<Metadata name="Catalog.OData4_Профили.Attribute.ШаговApply" id="94b466a0-d34b-46c4-b13b-5708988a18f5"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыОбъектов.Attribute.Объект" id="9695349d-f2f8-4aad-b449-0467ba8f8a1f"/>
+			<Metadata name="Catalog.OData4_Профили.Attribute.ГлубинаExpand" id="990f7889-4244-459f-b127-3226de9c682b"/>
+			<Metadata name="Catalog.OData4_Профили.Attribute.ОперацийBatch" id="99eb51f8-d0cf-41f2-b2cf-0f40213a5543"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыШаблоны.Attribute.ИдентификаторЗначения" id="9a921a32-1fda-482a-b555-ced4aa2117b7"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ЛимитыЧастоты.Attribute.Запросов" id="a8ae80e5-2bb4-4699-896f-9a8762c2de69"/>
+			<Metadata name="Catalog.OData4_Профили.Attribute.РазмерСтраницы" id="ab325d43-7f48-4ca5-8f0c-38f8879d1746"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыШаблоны.Attribute.ТипЗначения" id="b4b1172e-b99a-4855-9555-f9326a4754fe"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.Права" id="c8b37c20-2716-4a01-9a5a-5064a3467ab4"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ЛимитыЧастоты" id="eae5c5b6-ec23-419c-b831-38f0d5db875b"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ОтборыШаблоны" id="f02b247c-5d62-4786-9497-bc0bb7996e46"/>
+			<Metadata name="Catalog.OData4_Профили.Attribute.СложностьФильтра" id="f427adad-617b-4c8a-a5c0-76cd19fcda90"/>
+			<Metadata name="Catalog.OData4_Профили.TabularSection.ИсключённыеПоля" id="fb6be1ac-2c35-406b-95be-e4eba37d87b1"/>
+		</Metadata>
+		<Metadata name="Catalog.OData4_Профили.ObjectModule" id="e2fd59cc-75bb-4a84-b8eb-df5dfc6333a8.0" configVersion="11f744a1ffb8ebe9cf4699be5f273bf534c65f39"/>
+		<Metadata name="Catalog.OData4_Токены" id="0ebcb83a-66e2-44f3-ab30-b2d8315b5c30" configVersion="2a325160a51700d42f76c320be9b9ad3532a0430">
+			<Metadata name="Catalog.OData4_Токены.Attribute.РазрешённыеIP" id="3465fe3f-28a3-4eb0-a5c5-ff4816f60f82"/>
+			<Metadata name="Catalog.OData4_Токены.Attribute.Профиль" id="77ad390c-0730-4e90-9212-cb777b4a06a7"/>
+			<Metadata name="Catalog.OData4_Токены.Attribute.ХешТокена" id="7d45fa26-6269-4bac-85d0-43c79d92dfdc"/>
+			<Metadata name="Catalog.OData4_Токены.Attribute.ДатаПоследнегоИспользования" id="ace578ce-f4eb-438b-ade3-887081ef48e0"/>
+			<Metadata name="Catalog.OData4_Токены.Attribute.Активен" id="ba69a457-c4b8-4599-ac3d-66e3bc6ca5f0"/>
+			<Metadata name="Catalog.OData4_Токены.Attribute.СрокДействия" id="f5db4baa-9cd5-4d8c-bf7a-ab75840348e8"/>
+		</Metadata>
+		<Metadata name="CommonModule.OData4_Безопасность" id="ad5eb857-ec0f-4483-9e68-061268828e6e" configVersion="c8bb90c27b2159117766ec34c638fa8d291dc303"/>
+		<Metadata name="CommonModule.OData4_Безопасность.Module" id="ad5eb857-ec0f-4483-9e68-061268828e6e.0" configVersion="4483bfc134d9c39126f0636516e190567dc672f6"/>
+		<Metadata name="CommonModule.OData4_БезопасностьВызов" id="80f0f9da-a210-4480-9ca7-46edb01bfa13" configVersion="a76ed00e0c442ca4ed33a04ab31807943f6c0bac"/>
+		<Metadata name="CommonModule.OData4_БезопасностьВызов.Module" id="80f0f9da-a210-4480-9ca7-46edb01bfa13.0" configVersion="da1d8c5f420068aeeecfeddc0c89c2494a056c47"/>
+		<Metadata name="CommonModule.OData4_ВиртуальныеТаблицы" id="7c1e9a25-3f64-4b0e-9c88-21d5b6e0f743" configVersion="01477de3232f6a3b6941873c93d2399fab91001c"/>
+		<Metadata name="CommonModule.OData4_ВиртуальныеТаблицы.Module" id="7c1e9a25-3f64-4b0e-9c88-21d5b6e0f743.0" configVersion="3fccb50b9e555ef6f025f61e176976f0c59238e0"/>
+		<Metadata name="CommonModule.OData4_ВыдачаNative" id="b532d397-fb2d-40b5-b9b7-9d3c3fa1749e" configVersion="c181c33683721ac0bddb859043a34edcb06a133f"/>
+		<Metadata name="CommonModule.OData4_ВыдачаNative.Module" id="b532d397-fb2d-40b5-b9b7-9d3c3fa1749e.0" configVersion="3a5f65b899ece4eea5f35fb1c4fedb4f2401d752"/>
+		<Metadata name="CommonModule.OData4_Генератор" id="3f4cac20-43f3-4535-9af3-9f4151a5eb91" configVersion="1264df4c8a674648145c839c031bec4bf81c2219"/>
+		<Metadata name="CommonModule.OData4_Генератор.Module" id="3f4cac20-43f3-4535-9af3-9f4151a5eb91.0" configVersion="8c093b67db98247598daf971897b1b0c4c08e0a1"/>
+		<Metadata name="CommonModule.OData4_Движок" id="bbd71a73-0b53-415e-ac44-f91db19b5e78" configVersion="fb6aa6f5668c70534e860c90034d0f491e4f3c5a"/>
+		<Metadata name="CommonModule.OData4_Движок.Module" id="bbd71a73-0b53-415e-ac44-f91db19b5e78.0" configVersion="7c694a94cd9fbe152a463e5d260f01e5ed4cef3d"/>
+		<Metadata name="CommonModule.OData4_ДвижокПовтИсп" id="883972e7-a669-4894-8d62-039789ff7217" configVersion="bbcd95acc8d8ae3501ebcbe8eb9146ff01a8944f"/>
+		<Metadata name="CommonModule.OData4_ДвижокПовтИсп.Module" id="883972e7-a669-4894-8d62-039789ff7217.0" configVersion="ef3755aa1ca48591b2d8579672520c6ea40d4b83"/>
+		<Metadata name="CommonModule.OData4_Действия" id="2cc8ea57-c082-46c2-9ed0-e17d8f5198d7" configVersion="fe3b31a784f40e258f9184174b9fb223c034427d"/>
+		<Metadata name="CommonModule.OData4_Действия.Module" id="2cc8ea57-c082-46c2-9ed0-e17d8f5198d7.0" configVersion="23fb6d0f67f3631045bb2fcb7daa56ad59d1ac22"/>
+		<Metadata name="CommonModule.OData4_Журнал" id="a8d009e0-a97e-4eed-bd96-ff8ebb44c598" configVersion="ffd7ca630e7c4443d92422cedd2ef7b835abff32"/>
+		<Metadata name="CommonModule.OData4_Журнал.Module" id="a8d009e0-a97e-4eed-bd96-ff8ebb44c598.0" configVersion="61574432920dfee6de500d6f4f25b6475c23ad12"/>
+		<Metadata name="CommonModule.OData4_ЖурналПовтИсп" id="82032fc1-67d3-4fcf-9125-f6feed6ad379" configVersion="c8dcf7683bb8813cc79171d524e89f40fffa20d1"/>
+		<Metadata name="CommonModule.OData4_ЖурналПовтИсп.Module" id="82032fc1-67d3-4fcf-9125-f6feed6ad379.0" configVersion="e34ae9f87fba0d3decdc585263a399312d4ca1fa"/>
+		<Metadata name="CommonModule.OData4_Запись" id="8acc7a17-ed00-498f-a51c-e0c3ffcd7275" configVersion="ff081369c47e435471c9cee2fdeac6b597185f4b"/>
+		<Metadata name="CommonModule.OData4_Запись.Module" id="8acc7a17-ed00-498f-a51c-e0c3ffcd7275.0" configVersion="7c64ec677e28082d866fd4ee148d4bc43b94681f"/>
+		<Metadata name="CommonModule.OData4_ЗаписьВызов" id="6c2f594e-749c-46b8-918d-d2a7c34d6eec" configVersion="0e868983482842088a84c7d28a265e26cbeec01d"/>
+		<Metadata name="CommonModule.OData4_ЗаписьВызов.Module" id="6c2f594e-749c-46b8-918d-d2a7c34d6eec.0" configVersion="450716ea29c73fdaec2c712121d252dfa2c0e747"/>
+		<Metadata name="CommonModule.OData4_ЗаписьПоля" id="9d17cfa8-f8bf-4b7e-b47f-9cf1118ef8e2" configVersion="4734b7dc44463228e19c1c3b56db978170b24aad"/>
+		<Metadata name="CommonModule.OData4_ЗаписьПоля.Module" id="9d17cfa8-f8bf-4b7e-b47f-9cf1118ef8e2.0" configVersion="b1fb1970d85beb2ffd4468c1a80fbe7ee66513d5"/>
+		<Metadata name="CommonModule.OData4_КэшМетаданных" id="128b73d5-da07-435d-abb0-ebef412f1591" configVersion="b5fc3c20e499adf7c5561d7f2f9523ec7caa804f"/>
+		<Metadata name="CommonModule.OData4_КэшМетаданных.Module" id="128b73d5-da07-435d-abb0-ebef412f1591.0" configVersion="c0a827b95ea8ad99fedffe1ddaec5d4d861b77af"/>
+		<Metadata name="CommonModule.OData4_КэшМетаданныхЗапись" id="fb84bb58-4e47-4a5e-88d5-28e1e123fc34" configVersion="a1fca35c53eeb88cd2d0285a9607b0515ec50556"/>
+		<Metadata name="CommonModule.OData4_КэшМетаданныхЗапись.Module" id="fb84bb58-4e47-4a5e-88d5-28e1e123fc34.0" configVersion="e4f320a48ca6c56cf505d1e7e5c40febe69ff350"/>
+		<Metadata name="CommonModule.OData4_Маршрутизатор" id="58d8ceda-edbd-4a31-9290-516c10d34cf0" configVersion="dfa1d0706ef284e1c23e72de115daff730fbc2ca"/>
+		<Metadata name="CommonModule.OData4_Маршрутизатор.Module" id="58d8ceda-edbd-4a31-9290-516c10d34cf0.0" configVersion="8ceed6e889f3f55e05ea98c5bc928be167b34086"/>
+		<Metadata name="CommonModule.OData4_Метаданные" id="54652458-9820-49a7-b3fc-be16d285da6d" configVersion="304792713fd76bf1b49898c5dabdf49babe79ea9"/>
+		<Metadata name="CommonModule.OData4_Метаданные.Module" id="54652458-9820-49a7-b3fc-be16d285da6d.0" configVersion="29af479d1df0ff022f0b7e8bf56b2ea885bb9cac"/>
+		<Metadata name="CommonModule.OData4_Модель" id="785b8532-2558-44b0-98af-367d16995ddb" configVersion="49323abdf2579e199fc6d2a7144cd691ed26b227"/>
+		<Metadata name="CommonModule.OData4_Модель.Module" id="785b8532-2558-44b0-98af-367d16995ddb.0" configVersion="e3d2c005f34f3a7652520dc2fa2d52071f7553e9"/>
+		<Metadata name="CommonModule.OData4_МодельКэш" id="243abae6-3bf6-42c9-a1d5-5f0728a0e7d4" configVersion="b196e377ca956ff17ad9d94160864caf43b9f56b"/>
+		<Metadata name="CommonModule.OData4_МодельКэш.Module" id="243abae6-3bf6-42c9-a1d5-5f0728a0e7d4.0" configVersion="21e1c0c82673f6e5372bf9e0ec40652d96918a28"/>
+		<Metadata name="CommonModule.OData4_МодельПовтИсп" id="d852a850-5da4-4d46-9bf7-1ebd0d9a836f" configVersion="6d47656ce6cd2b06f1e8ba12d46c0c815d26df94"/>
+		<Metadata name="CommonModule.OData4_МодельПовтИсп.Module" id="d852a850-5da4-4d46-9bf7-1ebd0d9a836f.0" configVersion="7368449c4fc75c307de8e9703e1ef342747c0ef8"/>
+		<Metadata name="CommonModule.OData4_НастройкиВызовСервера" id="5017b531-7636-451d-8d80-f87c93cbe444" configVersion="1f4277c7e3485f83a2820cf99e189f4b859ed48c"/>
+		<Metadata name="CommonModule.OData4_НастройкиВызовСервера.Module" id="5017b531-7636-451d-8d80-f87c93cbe444.0" configVersion="15295feb2f07638ba4f35f9618f9bc5f6996f6c3"/>
+		<Metadata name="CommonModule.OData4_НастройкиСервиса" id="31af21e2-db45-4837-9993-1a22edbde03c" configVersion="034d6d51e0636a8b185b8b107e3ce81f3a0081bd"/>
+		<Metadata name="CommonModule.OData4_НастройкиСервиса.Module" id="31af21e2-db45-4837-9993-1a22edbde03c.0" configVersion="475d2dbd45b088044fdbc2bcb78fbeb62c4b6eb5"/>
+		<Metadata name="CommonModule.OData4_ОбъектыМодель" id="19d8e047-72f3-4b75-9886-af1966a80760" configVersion="3dd435e6ff3f1e8f55cae905dcc7b8e8049494b4"/>
+		<Metadata name="CommonModule.OData4_ОбъектыМодель.Module" id="19d8e047-72f3-4b75-9886-af1966a80760.0" configVersion="684810b4b873f62dc35a0efcb46cf2c74a4b92b3"/>
+		<Metadata name="CommonModule.OData4_Очистка" id="8c935b2b-68cf-415e-b209-662a4f0725b4" configVersion="d79277f2b5256b1f01795f57432457c9f57deb08"/>
+		<Metadata name="CommonModule.OData4_Очистка.Module" id="8c935b2b-68cf-415e-b209-662a4f0725b4.0" configVersion="4a2b9e89dd84742fe0c6ae8ca2272a1c901490fc"/>
+		<Metadata name="CommonModule.OData4_Пакет" id="3acdb6c0-1eeb-44bb-8f2c-9f59af310137" configVersion="1a2e4fe945be45cb2659a06cda1398e62dd69004"/>
+		<Metadata name="CommonModule.OData4_Пакет.Module" id="3acdb6c0-1eeb-44bb-8f2c-9f59af310137.0" configVersion="7b0df6e4d6164059042e8cce726b9a3cdfbfcce0"/>
+		<Metadata name="CommonModule.OData4_ПакетВыполнение" id="f46432c0-c140-4c09-8863-e1cd76c002da" configVersion="9669d8b64b51ff1dee5657b511303df43c1a1d72"/>
+		<Metadata name="CommonModule.OData4_ПакетВыполнение.Module" id="f46432c0-c140-4c09-8863-e1cd76c002da.0" configVersion="d8c31c8e11d88074b020ae1f36cd890678981fe9"/>
+		<Metadata name="CommonModule.OData4_ПланApply" id="d92f4c67-8b1a-4f05-ae63-71c8d0e2b45f" configVersion="bbd9ee66482d358d434d9c4399e82360f1b7a4de"/>
+		<Metadata name="CommonModule.OData4_ПланApply.Module" id="d92f4c67-8b1a-4f05-ae63-71c8d0e2b45f.0" configVersion="5e102cf92e939c02ae42c505ed3d7fd48e053d92"/>
+		<Metadata name="CommonModule.OData4_Планировщик" id="c2f6dc8f-b8e6-43e6-95e0-b79fa83f2a3a" configVersion="f2453ed65892d85384dd404800cc6f981b30c4ea"/>
+		<Metadata name="CommonModule.OData4_Планировщик.Module" id="c2f6dc8f-b8e6-43e6-95e0-b79fa83f2a3a.0" configVersion="8b8c484e879763d671647205a68ded66cd99fd5f"/>
+		<Metadata name="CommonModule.OData4_ПовтИспВызова" id="12594a77-4bca-46ac-85c8-4fe4330b7f31" configVersion="4adbe78f938359a7f6208cb79f2afb7a66abc784"/>
+		<Metadata name="CommonModule.OData4_ПовтИспВызова.Module" id="12594a77-4bca-46ac-85c8-4fe4330b7f31.0" configVersion="0de091753750da6c3ae86ce1a520d7f25e5a548f"/>
+		<Metadata name="CommonModule.OData4_ПовторыЗапросов" id="0b9f146e-f1ad-4e36-84cf-2015b3e2b29d" configVersion="25e72a3766b1ffc0c1cdf38ab0c9b4699d4dc97e"/>
+		<Metadata name="CommonModule.OData4_ПовторыЗапросов.Module" id="0b9f146e-f1ad-4e36-84cf-2015b3e2b29d.0" configVersion="8462d6af0698e57b491f76624bd79ff1a28b7a2d"/>
+		<Metadata name="CommonModule.OData4_ПроверкаУдаления" id="821c9ef6-902d-46e3-a8e9-45127f32d49d" configVersion="9774d3361c4b54eb551eba85613b07a6c7c4dbcf"/>
+		<Metadata name="CommonModule.OData4_ПроверкаУдаления.Module" id="821c9ef6-902d-46e3-a8e9-45127f32d49d.0" configVersion="a92e3899b4f9b1ff9168863fd0473670aa255e11"/>
+		<Metadata name="CommonModule.OData4_Профили" id="ff10b85c-470f-4e1c-877a-eea69aca7f5a" configVersion="0534c27f84364745043cb470e0e9890bc36029a2"/>
+		<Metadata name="CommonModule.OData4_Профили.Module" id="ff10b85c-470f-4e1c-877a-eea69aca7f5a.0" configVersion="505d464e8710848f3130de782555ca24861542c9"/>
+		<Metadata name="CommonModule.OData4_ПрофилиКэш" id="205b6c8f-e636-4300-a9f4-83a15fce6e1c" configVersion="ae82f6c6b074be962975b324f141f19014ffbe19"/>
+		<Metadata name="CommonModule.OData4_ПрофилиКэш.Module" id="205b6c8f-e636-4300-a9f4-83a15fce6e1c.0" configVersion="1e3d77c3ac6849f2d7c48582f8bccfb674d927b5"/>
+		<Metadata name="CommonModule.OData4_ПрофильМодели" id="1feb968b-ac28-4ec3-a48a-8209938c7ec8" configVersion="13757347e84b8fb0b61043efc0a84e31c86e65d4"/>
+		<Metadata name="CommonModule.OData4_ПрофильМодели.Module" id="1feb968b-ac28-4ec3-a48a-8209938c7ec8.0" configVersion="c1d43d09694096be827d7448b8e9b80815d00b3e"/>
+		<Metadata name="CommonModule.OData4_ПрофильМоделиКэш" id="5d4da252-8108-4858-b764-e6c3b3ffd31d" configVersion="9ae8d6fbda2393a883028ac26d50ed373d74e9ff"/>
+		<Metadata name="CommonModule.OData4_ПрофильМоделиКэш.Module" id="5d4da252-8108-4858-b764-e6c3b3ffd31d.0" configVersion="35e6b25a79ab64bda1f4b793bc6bf8bcc0ca9621"/>
+		<Metadata name="CommonModule.OData4_Разбор" id="778a4e2f-cf3e-4fa4-9bc3-076127aefdfe" configVersion="34c16390d0456604aa26a413b97cebc515165098"/>
+		<Metadata name="CommonModule.OData4_Разбор.Module" id="778a4e2f-cf3e-4fa4-9bc3-076127aefdfe.0" configVersion="2f18e2e6e47bb07050071201a72b5ab65aa46475"/>
+		<Metadata name="CommonModule.OData4_РазборТелNative" id="79d51c51-cea6-4f90-932d-d715348e5357" configVersion="18773c6e0871b0f6730ef26140f181ffbe553a41"/>
+		<Metadata name="CommonModule.OData4_РазборТелNative.Module" id="79d51c51-cea6-4f90-932d-d715348e5357.0" configVersion="0d6d36598ef3bde6d1454093092317696244c453"/>
+		<Metadata name="CommonModule.OData4_РегистрыМодель" id="0b0c6f42-4a83-4a1f-8a31-5f2a0e1c73d4" configVersion="6dc11e2a11cb641ec181b91fd2a380a65a0f46d3"/>
+		<Metadata name="CommonModule.OData4_РегистрыМодель.Module" id="0b0c6f42-4a83-4a1f-8a31-5f2a0e1c73d4.0" configVersion="73ae382ef0dd6f9c6e3dbc96030d3c48827e8ddb"/>
+		<Metadata name="CommonModule.OData4_Сервис" id="bc30bf5b-2589-451e-a78a-14a15bc41823" configVersion="31f46c74f378f7964031ee7b6ba75210f6c266a3"/>
+		<Metadata name="CommonModule.OData4_Сервис.Module" id="bc30bf5b-2589-451e-a78a-14a15bc41823.0" configVersion="fe9735fbeb50e63fa6d48f43e6e2a62422cd0f4d"/>
+		<Metadata name="CommonModule.OData4_Сериализация" id="1f3e15df-e491-4d3e-8835-bccd5e97c95c" configVersion="2b91e8dd53cbbbff4ec104bd3986d06c78fc47df"/>
+		<Metadata name="CommonModule.OData4_Сериализация.Module" id="1f3e15df-e491-4d3e-8835-bccd5e97c95c.0" configVersion="ec0906c1d94305c44c507f1e9c897adf02fa5b1b"/>
+		<Metadata name="CommonModule.OData4_Состав" id="fad6559d-1ca8-4f65-9719-0ea1edb19296" configVersion="b92974af256b0b84d2ae011fe6c038148b71c6b9"/>
+		<Metadata name="CommonModule.OData4_Состав.Module" id="fad6559d-1ca8-4f65-9719-0ea1edb19296.0" configVersion="f0b184236d6ace7b3feb50b174c2766ffa3a5537"/>
+		<Metadata name="CommonModule.OData4_Хранилище" id="174c3b92-f7f4-4fbb-9c0e-ea2de8b3743c" configVersion="2c0cd8001177d62d61f2af923cd07add72ad661a"/>
+		<Metadata name="CommonModule.OData4_Хранилище.Module" id="174c3b92-f7f4-4fbb-9c0e-ea2de8b3743c.0" configVersion="ea29294ae842e0eb32be451689bf5d8499313fba"/>
+		<Metadata name="CommonModule.OData4_Чтение" id="cba0b098-29eb-42f6-b62e-bf352532ee81" configVersion="821bc7bc6ae812048a3d039fdce3cd33c64b3f0f"/>
+		<Metadata name="CommonModule.OData4_Чтение.Module" id="cba0b098-29eb-42f6-b62e-bf352532ee81.0" configVersion="a2f1445cf886a1d759daac1fed5fb732f0c2626f"/>
+		<Metadata name="CommonTemplate.OData4_Компонента" id="f6556c50-5a49-4656-80f1-f1f9e2f47611" configVersion="b2645f89c08fa3579146bcf5c75fccaa67fabe66"/>
+		<Metadata name="CommonTemplate.OData4_Компонента.Template" id="f6556c50-5a49-4656-80f1-f1f9e2f47611.0" configVersion="cb744cac7795eea1bf098acf211727d5e946be46"/>
+		<Metadata name="Configuration.OData4" id="428fe477-03d1-424f-bfd0-9941ca56b207" configVersion="8926ee9479e77194117114fca4c5c946afd759a8"/>
+		<Metadata name="Configuration.OData4.ManagedApplicationModule" id="a658b222-13df-494b-9a9e-4ac91d699aaf.6" configVersion="f76aa8f91cd260d0bda7253346be85b7733926d2"/>
+		<Metadata name="DataProcessor.OData4_Настройки" id="79bbf7e3-2c98-4071-b0ca-b05e4b27d734" configVersion="1d937c626ba113afee4c538563b1554f6e6428f7"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.ВыпускТокена" id="6b1c8e34-95af-4d27-a0b8-53d7e2f14c96" configVersion="afb8a2bd506f045e286bc0b8f0d613341da68002"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.ВыпускТокена.Form" id="6b1c8e34-95af-4d27-a0b8-53d7e2f14c96.0" configVersion="c69bc742583655eada19ede21ff5e30992d75ef9"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.Предупреждение" id="77baaf68-1ead-4f32-a0c9-dd3c45732995" configVersion="7fe68d67fcbbc12bcb9a77258bc4a6660378eb4a"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.Предупреждение.Form" id="77baaf68-1ead-4f32-a0c9-dd3c45732995.0" configVersion="2f523330d0a168a18bcae5ea38c6295a0d3a9965"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.Профиль" id="1d9a4c77-2f83-41b6-9f5e-7c0a5b3e8d12" configVersion="7c9f200b2d97935b88d8e30ca25b90d9d263e943"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.Профиль.Form" id="1d9a4c77-2f83-41b6-9f5e-7c0a5b3e8d12.0" configVersion="9652d5499b7cf1e7b3b3d759424b3f3dd7ac994b"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.Форма" id="101ff2f5-c818-4678-8f6a-43fee348c6da" configVersion="f78397936849504d18d7e7968a0cab318d8d5488"/>
+		<Metadata name="DataProcessor.OData4_Настройки.Form.Форма.Form" id="101ff2f5-c818-4678-8f6a-43fee348c6da.0" configVersion="7a6ce32b78a4976cc80ee6c2a93e2c17e59f57a8"/>
+		<Metadata name="HTTPService.OData4" id="60a334cf-e285-4fc2-9f45-5c64937d64f4" configVersion="cb57c709fb423c5796ebfc90d8c5c22263b99a5b">
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.PUT" id="00440887-8e9a-493f-9a85-5f75590b312d"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.OPTIONS" id="3fc64f3f-cb57-47ae-abbf-399f79c4e811"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.GET" id="5da0b768-fbbd-4920-a6ce-49fa506b155d"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.POST" id="657f4f51-181b-4a75-bfd5-4a1faca7b5bb"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все" id="744587f9-e378-4fe3-8a94-27ae592ec1be"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.MERGE" id="935e3de1-5946-42dc-b03d-18e87af14bd0"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.DELETE" id="cd450ab1-a8f2-4bbc-b10a-eb3b97c3249f"/>
+			<Metadata name="HTTPService.OData4.URLTemplate.Все.Method.PATCH" id="f8e6a816-cea0-4c2d-ae67-4178d2558cb9"/>
+		</Metadata>
+		<Metadata name="HTTPService.OData4.Module" id="60a334cf-e285-4fc2-9f45-5c64937d64f4.0" configVersion="5b4dcca0134a4e96cbabc5816baed4d527770be6"/>
+		<Metadata name="HTTPService.OData4T" id="ffb6bb6d-09f5-4bf1-b97d-d248e8a548fd" configVersion="e20cb3ae0c41283b298013d2a9d670cdf186ce87">
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.MERGE" id="0fe0f8d6-c897-4aa0-8ffb-e8a89b10c22f"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.OPTIONS" id="3c6e5d18-49b2-4f7a-8c51-2ab9d0e7f461"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.PATCH" id="433d2a9e-9090-46e9-bd1e-be5b025d8434"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все" id="4f2887dc-60e3-43bb-b137-fd0665d6958d"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.DELETE" id="58dcb3b7-ca82-4ad2-8e07-75f611a20df3"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.POST" id="7a7fe340-6706-4c7a-9293-f3be800234f8"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.PUT" id="873e6e78-9e9a-4994-9780-74e2a6839784"/>
+			<Metadata name="HTTPService.OData4T.URLTemplate.Все.Method.GET" id="fb0feae0-6a5e-46da-8f1b-b66e63812d55"/>
+		</Metadata>
+		<Metadata name="HTTPService.OData4T.Module" id="ffb6bb6d-09f5-4bf1-b97d-d248e8a548fd.0" configVersion="dc7ba8783f8f95146ff533d0b80f751b51c473f0"/>
+		<Metadata name="InformationRegister.OData4_Журнал" id="10538a9b-cfb0-4018-a2cd-eb959acd8334" configVersion="77d9d2bfd8e95ef37b2fa2480e2b858b164d2115">
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Профиль" id="0b2cc589-12fd-46b6-80ca-c66645c578d4"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Субъект" id="135fcd98-c17a-42e0-bc09-0a51911c3704"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Строк" id="3ff96f1c-b1ea-45dc-9f60-c6a4fd331e73"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Сервис" id="92c3eba7-e393-4922-a8c1-28faf4d41a0f"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Пакет" id="973a47d6-7537-4125-9aac-95de589945d0"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.ТекстОшибки" id="a4bc24ec-d22e-4b4c-b490-28675282e73a"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Параметры" id="aeac2960-e710-47e2-954f-9231bc52c242"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Операция" id="c09a8b76-7bbe-4e52-881b-80d317a7b153"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Дата" id="c99868e7-dcab-4de1-bcfd-b6e173d14919"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Dimension.Время" id="d036ef5b-666e-47ad-b37d-61f401715f67"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Метод" id="da3fdeec-14c9-4b8a-9b9c-ffb4c812c0ef"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Путь" id="dd4f93cb-a4d9-42a7-a537-c6dac1a5abbe"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Объект" id="e98227d1-1ed4-4c7d-b565-b37062071003"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Dimension.Идентификатор" id="f166a348-2158-4f03-8a84-54a9614d23ba"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Длительность" id="f18e97db-006f-4f3c-9158-ae61a10b1259"/>
+			<Metadata name="InformationRegister.OData4_Журнал.Resource.Статус" id="ff8c97d4-d1df-4eca-848a-d48b23a4baa4"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_КэшМетаданных" id="30af7837-cd65-49e4-b2ea-dd83759406cf" configVersion="5f7f018b4a79dbc22d3728b8479454c72f10a46d">
+			<Metadata name="InformationRegister.OData4_КэшМетаданных.Resource.Документ" id="1f38cb74-5ee4-4159-bc44-d745c9828e51"/>
+			<Metadata name="InformationRegister.OData4_КэшМетаданных.Resource.Среда" id="321e5545-32e9-47d8-acc9-facd17a292b3"/>
+			<Metadata name="InformationRegister.OData4_КэшМетаданных.Resource.Записан" id="56ba7f3b-74cf-4327-bdec-c8548f629c17"/>
+			<Metadata name="InformationRegister.OData4_КэшМетаданных.Resource.Размер" id="80c4e2c7-baf6-45b7-b22f-8141929a0b53"/>
+			<Metadata name="InformationRegister.OData4_КэшМетаданных.Dimension.Вид" id="b8d4e85d-c7f7-4071-ab61-c6a8b8cdabef"/>
+			<Metadata name="InformationRegister.OData4_КэшМетаданных.Dimension.Ключ" id="fe4310b2-97f6-4fe5-81f8-990991dffa42"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_Настройки" id="1c535053-0ee6-41ef-914e-e44479016416" configVersion="75a56fc4a3f03f7d568837e0d77bce4c1c7bc626">
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшееЧислоЭлементовIn" id="02d7db01-7f4e-4ab3-a87b-8c1925742c4c"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ПроверкаКонфигурации" id="051fe5e1-6851-40fc-b8eb-1c3cec82bd36"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.АдресПубликацииТокенов" id="056b9829-73d0-4fe8-954b-364a1279818b"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ЯвныеФлажки" id="0714a029-3af1-47ff-be16-846376619cbf"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РазрешитьФизическоеУдаление" id="089e7e72-d1ec-4f7e-9b55-e0df18440a24"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ИсточникиCORS" id="08dcfa15-8f77-4528-926d-d2a94afadef8"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РазрешитьBasicСлужебнымУчёткам" id="0ff6b867-8527-4f0a-92f6-2785b1bd299d"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ЗаголовокАдресаКлиента" id="1c55c2f6-53bb-4d40-a6d8-fb6f35ecfb9a"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимПримененияПрофиля" id="1fedca38-491f-4c34-9a31-978edfb8dd96"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СтрогийРежимBasic" id="2cbd3cb2-aa64-4abd-8b79-04d6e706d108"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ВерсияНастроек" id="39e0c34a-d1cd-4342-afaf-228117e7cf01"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ТокеныПродолжения" id="3bd2cd79-82ad-4f50-a9ae-5c2511b13d30"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшееЧислоРаскрытий" id="3f94d0c1-6298-4083-9f36-428383ab7c0a"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимВыдачи" id="42a8704a-444c-4196-bcae-1410a5a46b30"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимРазбораТел" id="484004f2-7cd7-4eed-bae4-5b889323d94f"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.УровеньЖурнала" id="4f0f1b38-d40e-4e6b-9e63-772918b52520"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ПодробныеОшибкиЗаписи" id="4f8451b8-ed18-45c8-873e-714597bb671a"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СохранятьПараметрыЗапроса" id="5ab455b0-0370-4559-bc7e-08da58093bdc"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ОтвергатьНеизвестныеСвойства" id="5ed8c4fd-f3ec-4611-bf5b-1e3fe63105d4"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшееЧислоСтрокОтвета" id="67d9a8ed-3e11-4bcc-af77-bee91b9f7b86"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СубконтоВНаборахЗаписей" id="6cd3b6fe-f4f9-4d75-8749-742a0f507176"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ПроверкаСсылокЗаписи" id="6d702f0d-e9ff-4af0-81fb-65efdd24acef"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимПравСлужебногоПользователя" id="6e73bbfa-8357-43a6-8890-76cbb961f978"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшаяСложностьВыражения" id="738d4c0a-2b11-4afa-ac04-6e28ff06f84f"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ТребоватьIfMatch" id="73d553b0-fe34-453e-865c-cebd19945faa"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СрокХраненияЖурнала" id="790d3aa8-4092-473b-92c4-a2969b3899b0"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшаяДлинаСтроковогоЛитерала" id="7a4cdc3f-8309-4a04-ba00-08b7e084b9f6"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СверкаДвижков" id="7b854832-8477-4607-8602-26613b4228f9"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ДоверятьЗаголовкуАдресаКлиента" id="7e016f71-e110-48cf-b4ad-ebc292c02c04"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СохранятьСубконтоНаборов" id="82fb201b-34ab-492d-93cd-5c74759b017d"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.КлючПриСоздании" id="86fde08b-6259-4c65-876f-c42c55356f33"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РазмерПачкиЖурнала" id="9102a4a8-db0b-4185-a8a0-d50108753bc7"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимЗаписиЖурнала" id="998d46b7-0b6d-43a1-b6e0-56318cfe5727"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.КэшМетаданных" id="9e97dd77-6e59-47c5-8e7c-2d7b27c14d45"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СлужебныеПользователи" id="a818ca3c-547c-4b39-8f58-047d7d7d4cd2"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ИнтервалПачкиЖурнала" id="a82850b8-1360-409f-a930-1512feaea80d"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СрокЖизниТокеновПродолжения" id="ad4f2666-581a-426f-a099-dea17066af04"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ВыдачаКоллекций" id="af099224-f91c-4eff-ac65-2943ce59e849"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СохранятьТекстОшибки" id="b0cca676-0ac1-4630-896b-21ac146aa989"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ИспользоватьКомпонентуДляРазбора" id="b24e4bdb-202b-4868-895d-ab9731fb1a64"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РазмерПорцииВыдачи" id="b303bc25-55e0-4fb8-8026-1a9383492e55"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимДат" id="b3a84d7c-cdf3-4668-b8d5-8dcedefe74ad"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ЧислоДоверенныхПрокси" id="bb5f14ea-e4c1-4a65-bd3a-0b6c46e69b1a"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ПоискСсылокПриУдалении" id="be4876cb-bd39-465a-ba95-0b1f3333d57d"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшееЧислоЭлементовOrderby" id="c1702ce7-48f0-4cbf-80d1-3199db24cefa"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимМетаданных" id="c1f1b53d-6ad6-42eb-b281-2eeefe04a724"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ДублироватьЖурналВЖурналРегистрации" id="c29ded47-a1b9-4be2-962d-30b56b7420bc"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшийРазмерBatchМБ" id="c8e0eba0-1e55-4292-9946-ad5f8f10e4f4"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.АдресПубликации" id="d0e8a6aa-38e8-4a5d-8b29-c28aea7c445c"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ЖурналОтказовВхода" id="de27900c-91e4-43f6-87b9-397ff59ff3a7"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.НаибольшееЧислоОперацийBatch" id="e36855e2-4b51-482b-8dd5-b03eae5ec8f9"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.РежимПроведения" id="ee980417-b87b-47b5-87e5-ec4327de31da"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.ПроверятьЗаполнение" id="f8770a33-c784-4060-90a3-efe8840bbf81"/>
+			<Metadata name="InformationRegister.OData4_Настройки.Resource.СрокПовторовЗапросов" id="fc50cd53-48e0-4e5d-8e41-08dca1bba424"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_ПовторыЗапросов" id="aaaa0dd5-80ba-4840-b199-28c434b421af" configVersion="94f0465c273c284818550a273f58c8f924adea33">
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Записан" id="1930f062-5c2a-44d3-a158-e1ff5dbd3947"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Тело" id="2c11af3c-9f02-408e-acba-a7e4ded300ed"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Метод" id="45401453-7f1e-4dc2-ab41-0b29973894e8"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Dimension.Ключ" id="4c09c016-f80b-4d12-a38a-d3bfe0243300"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Срок" id="839be5de-6a11-48a8-857a-cbe1bd7a0b8e"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Статус" id="8c789f80-0ec9-458e-b802-989e13af63e1"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Отпечаток" id="a60e2e18-d8cc-4304-8f69-68f9503d1073"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Dimension.Субъект" id="cd07f65b-66ae-433e-bb07-81140d8cdb94"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Путь" id="cea3936e-a862-4066-9d4a-f2f425a30aef"/>
+			<Metadata name="InformationRegister.OData4_ПовторыЗапросов.Resource.Заголовки" id="e3a93f1f-88e5-434d-a49c-b1df4c8e2338"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_ПрофилиПользователей" id="a6747f24-a98c-4761-925b-3a8403f9876c" configVersion="31510cc203d052a351566a2613b94d31cf6802ec">
+			<Metadata name="InformationRegister.OData4_ПрофилиПользователей.Resource.Профиль" id="07f5de42-0bad-4891-a0f0-cae7f0777748"/>
+			<Metadata name="InformationRegister.OData4_ПрофилиПользователей.Dimension.Пользователь" id="1ce265b2-84ae-42c6-8ebc-801695a9cec5"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_Состав" id="ce5bf084-7fdd-43a2-8bca-1b603276a972" configVersion="fdbcd4c7c81874edb5a5e062c0489f67c1a29f2f">
+			<Metadata name="InformationRegister.OData4_Состав.Resource.ИсключённыеТабличныеЧасти" id="8a9e0182-8d51-4f28-bc10-bb2a5add404d"/>
+			<Metadata name="InformationRegister.OData4_Состав.Resource.ИсключённыеПоля" id="986b9db8-5ae9-4b2b-b27c-21af325a2bb4"/>
+			<Metadata name="InformationRegister.OData4_Состав.Resource.Включён" id="c68a7f98-2ade-4cf2-aeee-154c91d441a8"/>
+			<Metadata name="InformationRegister.OData4_Состав.Dimension.ПолноеИмя" id="d1658edc-a203-4034-9a64-859948c04957"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_СоставСтандартногоИнтерфейса" id="601ee8d6-f4cf-4f7a-aab0-a2004694d4e8" configVersion="aab6f803fd8b30b0ed093cbe4b3d62e4e26cd90b">
+			<Metadata name="InformationRegister.OData4_СоставСтандартногоИнтерфейса.Resource.Версия" id="d05eafbc-984e-4546-9207-02f9ef649daf"/>
+			<Metadata name="InformationRegister.OData4_СоставСтандартногоИнтерфейса.Dimension.ПолноеИмя" id="f828ad1b-2a98-49dc-ba7a-f27cb8f049f5"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_СчётчикиЗапросов" id="61ced6e1-e88f-46d7-81da-018daa67529b" configVersion="48143058839af3d1d63f0631dd2fa17aabdf7579">
+			<Metadata name="InformationRegister.OData4_СчётчикиЗапросов.Resource.Число" id="2182e90f-3bb9-4ed0-af56-31704da9c172"/>
+			<Metadata name="InformationRegister.OData4_СчётчикиЗапросов.Dimension.Правило" id="8bfe3028-7aa1-4785-b022-273ccb9bb066"/>
+			<Metadata name="InformationRegister.OData4_СчётчикиЗапросов.Dimension.НачалоОкна" id="9b467828-5abe-427d-9985-aca7ba2dea10"/>
+			<Metadata name="InformationRegister.OData4_СчётчикиЗапросов.Dimension.Субъект" id="bbec0351-ba0c-4562-bbf5-4ff8487e72aa"/>
+		</Metadata>
+		<Metadata name="InformationRegister.OData4_ТокеныПродолжения" id="c9fa7c66-113c-4bf1-8b5d-9e8532b6b315" configVersion="5e95be986408ce440a5fd1273859848ca7abd547">
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Resource.Срок" id="47149622-8ac5-4b2f-bfd0-9bee5ca05cd7"/>
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Resource.Параметры" id="95dc8b4f-7c7e-49f5-b1ea-7ad567e5b0d9"/>
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Dimension.ХешКлюча" id="a6bc569a-f8d4-4bc2-a469-1932cfa0652e"/>
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Resource.Профиль" id="bfeea8a8-2a91-4b9d-8435-ab195746be4e"/>
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Resource.Набор" id="c2d31efb-f61e-476d-ab9f-977eca465763"/>
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Resource.ХешТокена" id="caf20fd4-3c1e-4099-988f-4d84f9097a81"/>
+			<Metadata name="InformationRegister.OData4_ТокеныПродолжения.Resource.Использован" id="dc944286-a7b2-4236-9b76-b366b99fe740"/>
+		</Metadata>
+		<Metadata name="Language.Русский" id="4b8b0948-ef96-459d-b7eb-8f260e2e7c55" configVersion="990b9cee624c1ab62e8148981676c119c56d58c2"/>
+		<Metadata name="Role.OData4_Администратор" id="e8478589-c6f5-4ed2-af6d-98c12a6c9b61" configVersion="710da7f02a403afd7eb796c17f1ec6d4257f3ff1"/>
+		<Metadata name="Role.OData4_Администратор.Rights" id="e8478589-c6f5-4ed2-af6d-98c12a6c9b61.0" configVersion="67f8c8cda3724ded6af677dadb56837d32a39864"/>
+		<Metadata name="Role.OData4_Пользователь" id="2d8c94c0-011c-4039-ab04-269d454e2d8d" configVersion="6f004c6ea15b0f2581845e49ca64c517b3455170"/>
+		<Metadata name="Role.OData4_Пользователь.Rights" id="2d8c94c0-011c-4039-ab04-269d454e2d8d.0" configVersion="9cd1164bff5477ef71082553e05be60fe4b2cdde"/>
+		<Metadata name="Role.OData4_СлужебныйПользователь" id="2cc4d691-ac99-437b-8416-25e8f1ab43a4" configVersion="d1c1081c1d9ab694fb03e1b0d73f041ed5444c42"/>
+		<Metadata name="Role.OData4_СлужебныйПользователь.Rights" id="2cc4d691-ac99-437b-8416-25e8f1ab43a4.0" configVersion="b1569cd65076299f234ad508e9d568b4318e07d4"/>
+		<Metadata name="ScheduledJob.OData4_Очистка" id="40b5b995-8d68-4289-af7e-e29a635e398f" configVersion="beb3c79e983ad756607bc400278e18f803a65948"/>
+		<Metadata name="ScheduledJob.OData4_Очистка.Schedule" id="40b5b995-8d68-4289-af7e-e29a635e398f.0" configVersion="7ca20e6040f7394738bd1f730d4a8ae639fc2c3c"/>
+		<Metadata name="Subsystem.OData4" id="05997c53-71b5-4ce4-9a87-8debceb37ff1" configVersion="dd6f3c0ec4b565207ae0c3cd31915b53fb01df82"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

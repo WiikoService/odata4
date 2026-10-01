@@ -1,0 +1,3930 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Настройки OData4</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписатьИЗакрыть" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ЗаписатьИЗакрыть</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьИЗакрытьРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаЗаписать" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ФормаПеречитать" id="5">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Перечитать</CommandName>
+				<ExtendedTooltip name="ФормаПеречитатьРасширеннаяПодсказка" id="6"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="7">
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="8"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаАутентификация" id="400">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аутентификация</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаАутентификацияРасширеннаяПодсказка" id="401"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияСервисы" id="402">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>odata — вход Basic пользователя 1С; odatat — токены на публикации с фиксированным пользователем.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияСервисыКонтекстноеМеню" id="403"/>
+							<ExtendedTooltip name="ДекорацияСервисыРасширеннаяПодсказка" id="404"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_СтрогийРежимBasic" id="405">
+							<DataPath>Настройки_СтрогийРежимBasic</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Строгий режим Basic: пользователь без профиля получает 403</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_СтрогийРежимBasicКонтекстноеМеню" id="406"/>
+							<ExtendedTooltip name="Настройки_СтрогийРежимBasicРасширеннаяПодсказка" id="407"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Настройки_РежимПримененияПрофиля" id="408">
+							<DataPath>Настройки_РежимПримененияПрофиля</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Режим применения профиля</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Представление модели на профиль</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ПредставлениеМодели</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Полная модель и проверки по месту</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ПроверкиПоМесту</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимПримененияПрофиляКонтекстноеМеню" id="409"/>
+							<ExtendedTooltip name="Настройки_РежимПримененияПрофиляРасширеннаяПодсказка" id="410"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияРежимПрофиля" id="411">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ответы одинаковы: представление модели держит копию модели на профиль, проверки по месту — одну модель и проверки в запросе.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияРежимПрофиляКонтекстноеМеню" id="412"/>
+							<ExtendedTooltip name="ДекорацияРежимПрофиляРасширеннаяПодсказка" id="413"/>
+						</LabelDecoration>
+						<InputField name="Настройки_РежимПравСлужебногоПользователя" id="414">
+							<DataPath>Настройки_РежимПравСлужебногоПользователя</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Права служебного пользователя (сервис odatat)</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Роли конфигурации</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">РолиКонфигурации</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Роли расширения (OData4Права)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">РолиРасширения</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Привилегированный режим</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Привилегированный</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимПравСлужебногоПользователяКонтекстноеМеню" id="415"/>
+							<ExtendedTooltip name="Настройки_РежимПравСлужебногоПользователяРасширеннаяПодсказка" id="416"/>
+							<Events>
+								<Event name="OnChange">РежимПравПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияРежимаПрав" id="417">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Роли конфигурации — права 1С служебной учётки. Роли расширения — права даёт расширение прав: чтение — go run ./tools/devcli rights --deploy, запись — ещё --write; на БСП служебной учётке нужна и роль БазовыеПраваБСП. Привилегированный — RLS не действует, доступ задаёт только профиль; в безопасном режиме расширения не включается (запросы по токенам — 503).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияРежимаПравКонтекстноеМеню" id="418"/>
+							<ExtendedTooltip name="ДекорацияРежимаПравРасширеннаяПодсказка" id="419"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_ТокеныПродолжения" id="420">
+							<DataPath>Настройки_ТокеныПродолжения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Токены продолжения в @odata.nextLink</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ТокеныПродолженияКонтекстноеМеню" id="421"/>
+							<ExtendedTooltip name="Настройки_ТокеныПродолженияРасширеннаяПодсказка" id="422"/>
+							<Events>
+								<Event name="OnChange">ТокеныПродолженияПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Настройки_СрокЖизниТокеновПродолжения" id="423">
+							<DataPath>Настройки_СрокЖизниТокеновПродолжения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок жизни токена продолжения, с</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_СрокЖизниТокеновПродолженияКонтекстноеМеню" id="424"/>
+							<ExtendedTooltip name="Настройки_СрокЖизниТокеновПродолженияРасширеннаяПодсказка" id="425"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияСлужебныхУчёток" id="426">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Учётки публикации токенов; учётка первого запроса к odatat отмечается сама. Роль OData4_Администратор служебной учётке давать нельзя.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияСлужебныхУчётокКонтекстноеМеню" id="427"/>
+							<ExtendedTooltip name="ДекорацияСлужебныхУчётокРасширеннаяПодсказка" id="428"/>
+						</LabelDecoration>
+						<Table name="СлужебныеУчётки" id="429">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>6</HeightInTableRows>
+							<DataPath>СлужебныеУчётки</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СлужебныеУчёткиКонтекстноеМеню" id="430"/>
+							<AutoCommandBar name="СлужебныеУчёткиКоманднаяПанель" id="431">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СлужебныеУчёткиРасширеннаяПодсказка" id="432"/>
+							<SearchStringAddition name="СлужебныеУчёткиСтрокаПоиска" id="433">
+								<AdditionSource>
+									<Item>СлужебныеУчётки</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СлужебныеУчёткиСтрокаПоискаКонтекстноеМеню" id="434"/>
+								<ExtendedTooltip name="СлужебныеУчёткиСтрокаПоискаРасширеннаяПодсказка" id="435"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СлужебныеУчёткиСостояниеПросмотра" id="436">
+								<AdditionSource>
+									<Item>СлужебныеУчётки</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СлужебныеУчёткиСостояниеПросмотраКонтекстноеМеню" id="437"/>
+								<ExtendedTooltip name="СлужебныеУчёткиСостояниеПросмотраРасширеннаяПодсказка" id="438"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СлужебныеУчёткиУправлениеПоиском" id="439">
+								<AdditionSource>
+									<Item>СлужебныеУчётки</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СлужебныеУчёткиУправлениеПоискомКонтекстноеМеню" id="440"/>
+								<ExtendedTooltip name="СлужебныеУчёткиУправлениеПоискомРасширеннаяПодсказка" id="441"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="СлужебныеУчёткиОтмечен" id="442">
+									<DataPath>СлужебныеУчётки.Отмечен</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Служебная</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СлужебныеУчёткиОтмеченКонтекстноеМеню" id="443"/>
+									<ExtendedTooltip name="СлужебныеУчёткиОтмеченРасширеннаяПодсказка" id="444"/>
+									<Events>
+										<Event name="OnChange">СлужебнаяУчёткаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<LabelField name="СлужебныеУчёткиПользователь" id="445">
+									<DataPath>СлужебныеУчётки.Пользователь</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пользователь ИБ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="СлужебныеУчёткиПользовательКонтекстноеМеню" id="446"/>
+									<ExtendedTooltip name="СлужебныеУчёткиПользовательРасширеннаяПодсказка" id="447"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+						<CheckBoxField name="Настройки_РазрешитьBasicСлужебнымУчёткам" id="1201">
+							<DataPath>Настройки_РазрешитьBasicСлужебнымУчёткам</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Разрешить служебным учёткам вход по Basic на сервис odata</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Служебная учётка — фиксированный пользователь публикации токенов (список выше; учётка первого запроса к odatat отмечается сама). Её пароль лежит в default.vrd, а профиль ей приходит только из токена, поэтому по умолчанию вход по Basic на odata ей запрещён (403): без профиля она видела бы всё, что дают её роли. Включайте, только если та же учётка служит и обычным пользователем Basic.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_РазрешитьBasicСлужебнымУчёткамКонтекстноеМеню" id="1202"/>
+							<ExtendedTooltip name="Настройки_РазрешитьBasicСлужебнымУчёткамРасширеннаяПодсказка" id="1203"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияАдресаКлиента" id="1204">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адрес клиента для разрешённых IP токенов берётся из заголовка, который ставит прокси перед веб-сервером. Пока доверенный заголовок не настроен, токены с разрешёнными IP отвергаются (401).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияАдресаКлиентаКонтекстноеМеню" id="1205"/>
+							<ExtendedTooltip name="ДекорацияАдресаКлиентаРасширеннаяПодсказка" id="1206"/>
+						</LabelDecoration>
+						<InputField name="Настройки_ЗаголовокАдресаКлиента" id="1207">
+							<DataPath>Настройки_ЗаголовокАдресаКлиента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Заголовок адреса клиента</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>X-Forwarded-For — список адресов: каждый прокси дописывает в конец адрес, с которого к нему пришли. X-Real-IP — один адрес: прокси перезаписывает заголовок целиком. Клиент может прислать любой из них сам, поэтому доверяйте заголовку, только если его пишет ваш прокси или веб-сервер (Apache: RequestHeader set X-Forwarded-For &quot;expr=%{REMOTE_ADDR}&quot;).</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>X-Forwarded-For</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">X-Forwarded-For</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>X-Real-IP</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">X-Real-IP</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_ЗаголовокАдресаКлиентаКонтекстноеМеню" id="1208"/>
+							<ExtendedTooltip name="Настройки_ЗаголовокАдресаКлиентаРасширеннаяПодсказка" id="1209"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="Настройки_ДоверятьЗаголовкуАдресаКлиента" id="1210">
+							<DataPath>Настройки_ДоверятьЗаголовкуАдресаКлиента</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Доверять заголовку адреса клиента (его пишет прокси)</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ДоверятьЗаголовкуАдресаКлиентаКонтекстноеМеню" id="1211"/>
+							<ExtendedTooltip name="Настройки_ДоверятьЗаголовкуАдресаКлиентаРасширеннаяПодсказка" id="1212"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Настройки_ЧислоДоверенныхПрокси" id="1213">
+							<DataPath>Настройки_ЧислоДоверенныхПрокси</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Число доверенных прокси</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сколько ваших прокси стоит перед веб-сервером 1С и дописывает адрес в X-Forwarded-For. Адрес клиента — столько-й адрес списка, считая справа: 1 (по умолчанию) — последний, его дописал ближайший прокси; 2 — предпоследний (последний дописал второй прокси о первом). Всё левее присылает сам клиент, доверять этому нельзя. Для X-Real-IP и для заголовка, который веб-сервер перезаписывает целиком, — 1. Если адресов в заголовке меньше, адрес не определён и токен с разрешёнными IP отвергается.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="Настройки_ЧислоДоверенныхПроксиКонтекстноеМеню" id="1214"/>
+							<ExtendedTooltip name="Настройки_ЧислоДоверенныхПроксиРасширеннаяПодсказка" id="1215"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="ПредупреждениеДоступа" id="448">
+							<DataPath>ПредупреждениеДоступа</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>3</Height>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="ПредупреждениеДоступаКонтекстноеМеню" id="449"/>
+							<ExtendedTooltip name="ПредупреждениеДоступаРасширеннаяПодсказка" id="450"/>
+						</LabelField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДвижки" id="101">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Движки</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаДвижкиРасширеннаяПодсказка" id="102"/>
+					<ChildItems>
+						<CheckBoxField name="Настройки_ИспользоватьКомпонентуДляРазбора" id="103">
+							<DataPath>Настройки_ИспользоватьКомпонентуДляРазбора</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Использовать внешнюю компоненту для разбора</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ИспользоватьКомпонентуДляРазбораКонтекстноеМеню" id="104"/>
+							<ExtendedTooltip name="Настройки_ИспользоватьКомпонентуДляРазбораРасширеннаяПодсказка" id="105"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="Настройки_СверкаДвижков" id="106">
+							<DataPath>Настройки_СверкаДвижков</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Сверка движков</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_СверкаДвижковКонтекстноеМеню" id="107"/>
+							<ExtendedTooltip name="Настройки_СверкаДвижковРасширеннаяПодсказка" id="108"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Настройки_РежимВыдачи" id="887">
+							<DataPath>Настройки_РежимВыдачи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Выдача JSON</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кто пишет JSON ответов чтения (коллекции, сущности, ответы записи и операций $batch). Компонента недоступна в безопасном режиме расширения — тогда всегда язык 1С. Режим по умолчанию — BSL; «Сверка» нужна для проверки перед включением компоненты и вдвое нагружает сервер.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>BSL: выдача на языке 1С</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">BSL</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Компонента: выдача внешней компонентой OData4Native, сбой — язык 1С</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Компонента</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сверка: оба движка, ответ — язык 1С, расхождение — в журнал регистрации</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Сверка</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимВыдачиКонтекстноеМеню" id="888"/>
+							<ExtendedTooltip name="Настройки_РежимВыдачиРасширеннаяПодсказка" id="889"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_РежимРазбораТел" id="890">
+							<DataPath>Настройки_РежимРазбораТел</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Разбор тел</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кто разбирает тела запросов записи и $batch (JSON и multipart/mixed). Компонента недоступна в безопасном режиме расширения — тогда всегда язык 1С. Режим по умолчанию — BSL; «Сверка» нужна для проверки перед включением компоненты и вдвое нагружает сервер.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>BSL: разбор на языке 1С</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">BSL</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Компонента: разбор внешней компонентой OData4Native, сбой — язык 1С</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Компонента</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сверка: оба движка, ответ — язык 1С, расхождение — в журнал регистрации</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Сверка</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимРазбораТелКонтекстноеМеню" id="891"/>
+							<ExtendedTooltip name="Настройки_РежимРазбораТелРасширеннаяПодсказка" id="892"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_РежимМетаданных" id="893">
+							<DataPath>Настройки_РежимМетаданных</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Вывод $metadata</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кто пишет документ $metadata (CSDL XML и JSON) по модели. Компонента недоступна в безопасном режиме расширения — тогда всегда язык 1С. Режим по умолчанию — BSL; «Сверка» нужна для проверки перед включением компоненты и вдвое нагружает сервер.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>BSL: вывод на языке 1С</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">BSL</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Компонента: вывод внешней компонентой OData4Native, сбой — язык 1С</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Компонента</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сверка: оба движка, ответ — язык 1С, расхождение — в журнал регистрации</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Сверка</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимМетаданныхКонтекстноеМеню" id="894"/>
+							<ExtendedTooltip name="Настройки_РежимМетаданныхРасширеннаяПодсказка" id="895"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<CheckBoxField name="Настройки_КэшМетаданных" id="896">
+							<DataPath>Настройки_КэшМетаданных</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Хранить $metadata между сеансами</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Готовый документ $metadata сохраняется в базе и отдаётся новым сеансам без построения модели (первый запрос после изменения конфигурации, состава или настроек строит его заново). Выключите, если документ нужно строить при каждом новом сеансе.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_КэшМетаданныхКонтекстноеМеню" id="897"/>
+							<ExtendedTooltip name="Настройки_КэшМетаданныхРасширеннаяПодсказка" id="898"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Настройки_ПроверкаКонфигурации" id="899">
+							<DataPath>Настройки_ПроверкаКонфигурации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверка изменений конфигурации</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Как хранимый $metadata и словарь компоненты узнают, что конфигурация изменилась. «Полная» обходит метаданные (около 0,3 с на новый сеанс) и замечает любое изменение. «По номеру версии» смотрит только версию конфигурации и контрольные суммы расширений: новый сеанс быстрее, но изменение конфигурации без смены номера версии увидится только после перезапуска веб-сервера или очистки кэша (снять и поставить флажок «Хранить $metadata между сеансами»).</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Полная: обход метаданных, замечает любое изменение</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Полная</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>По номеру версии: быстрее, изменение без смены версии не замечается</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ПоВерсии</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_ПроверкаКонфигурацииКонтекстноеМеню" id="900"/>
+							<ExtendedTooltip name="Настройки_ПроверкаКонфигурацииРасширеннаяПодсказка" id="901"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_ВыдачаКоллекций" id="902">
+							<DataPath>Настройки_ВыдачаКоллекций</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выдача коллекций</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>«Страницами» — как требует OData v4 по умолчанию: по 1000 строк и @odata.nextLink на следующую страницу; каждая страница — отдельный запрос клиента. «Одним ответом» — как standard.odata: весь результат одним ответом без @odata.nextLink; сервер читает его порциями и сразу пишет в ответ, поэтому большие выгрузки (Power BI, Excel) идут быстрее. Если клиент сам просит размер страницы (Prefer: odata.maxpagesize), в $batch и при лимите страницы в профиле — всегда страницами.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Страницами (OData v4, по 1000 строк)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Страницами</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Одним ответом (как standard.odata, быстрее для больших выгрузок)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ОднимОтветом</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_ВыдачаКоллекцийКонтекстноеМеню" id="903"/>
+							<ExtendedTooltip name="Настройки_ВыдачаКоллекцийРасширеннаяПодсказка" id="904"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_РазмерПорцииВыдачи" id="905">
+							<DataPath>Настройки_РазмерПорцииВыдачи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Размер порции выдачи одним ответом, строк</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сколько строк сервер читает и пишет за один шаг при выдаче одним ответом. Больше порция — меньше запросов к базе (быстрее), но больше памяти на шаг. По умолчанию 5000.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="Настройки_РазмерПорцииВыдачиКонтекстноеМеню" id="906"/>
+							<ExtendedTooltip name="Настройки_РазмерПорцииВыдачиРасширеннаяПодсказка" id="907"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_НаибольшееЧислоСтрокОтвета" id="908">
+							<DataPath>Настройки_НаибольшееЧислоСтрокОтвета</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшее число строк одним ответом (0 — без предела)</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Защита от случайной выгрузки десятков миллионов строк: дальше этого числа ответ заканчивается ссылкой @odata.nextLink на продолжение, как у страницы. 0 — без предела.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ContextMenu name="Настройки_НаибольшееЧислоСтрокОтветаКонтекстноеМеню" id="909"/>
+							<ExtendedTooltip name="Настройки_НаибольшееЧислоСтрокОтветаРасширеннаяПодсказка" id="910"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="СостояниеКомпоненты" id="109">
+							<DataPath>СостояниеКомпоненты</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояние компоненты</v8:content>
+								</v8:item>
+							</Title>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Height>2</Height>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="СостояниеКомпонентыКонтекстноеМеню" id="110"/>
+							<ExtendedTooltip name="СостояниеКомпонентыРасширеннаяПодсказка" id="111"/>
+						</LabelField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаДаты" id="112">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Даты</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаДатыРасширеннаяПодсказка" id="113"/>
+					<ChildItems>
+						<InputField name="Настройки_РежимДат" id="114">
+							<DataPath>Настройки_РежимДат</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Режим дат</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Строгий: Дата → Edm.Date, Время → Edm.TimeOfDay, Дата и время → Edm.DateTimeOffset со смещением базы, пустая дата → null</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Строгий</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Совместимый: всё Edm.DateTimeOffset с Z, пустая дата → 0001-01-01T00:00:00Z</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Совместимый</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимДатКонтекстноеМеню" id="115"/>
+							<ExtendedTooltip name="Настройки_РежимДатРасширеннаяПодсказка" id="116"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЗапись" id="840">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запись</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЗаписьРасширеннаяПодсказка" id="841"/>
+					<ChildItems>
+						<CheckBoxField name="Настройки_ПроверятьЗаполнение" id="842">
+							<DataPath>Настройки_ПроверятьЗаполнение</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверять заполнение перед записью</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ПроверятьЗаполнениеКонтекстноеМеню" id="843"/>
+							<ExtendedTooltip name="Настройки_ПроверятьЗаполнениеРасширеннаяПодсказка" id="844"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияПроверятьЗаполнение" id="845">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Незаполненное обязательное поле — 400 с перечнем полей (строже standard.odata). Чтобы писать без проверки, как standard.odata, снимите флажок.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПроверятьЗаполнениеКонтекстноеМеню" id="846"/>
+							<ExtendedTooltip name="ДекорацияПроверятьЗаполнениеРасширеннаяПодсказка" id="847"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_ТребоватьIfMatch" id="848">
+							<DataPath>Настройки_ТребоватьIfMatch</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Требовать If-Match</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ТребоватьIfMatchКонтекстноеМеню" id="849"/>
+							<ExtendedTooltip name="Настройки_ТребоватьIfMatchРасширеннаяПодсказка" id="850"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияТребоватьIfMatch" id="851">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>С флажком изменение, удаление и проведение без If-Match, а создание без If-None-Match: * — 428. Включайте, только если все клиенты передают ETag из ответа чтения.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияТребоватьIfMatchКонтекстноеМеню" id="852"/>
+							<ExtendedTooltip name="ДекорацияТребоватьIfMatchРасширеннаяПодсказка" id="853"/>
+						</LabelDecoration>
+						<InputField name="Настройки_РежимПроведения" id="854">
+							<DataPath>Настройки_РежимПроведения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Режим Post без параметра</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Неоперативный</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Неоперативный</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Оперативный для документа сегодняшней даты</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ОперативныйСегодня</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимПроведенияКонтекстноеМеню" id="855"/>
+							<ExtendedTooltip name="Настройки_РежимПроведенияРасширеннаяПодсказка" id="856"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияРежимПроведения" id="857">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По умолчанию — неоперативно, как standard.odata. Чтобы документы сегодняшней даты проводились оперативно (как в интерфейсе 1С), выберите «Оперативный для документа сегодняшней даты». Параметр PostingModeOperational в запросе главнее настройки.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияРежимПроведенияКонтекстноеМеню" id="858"/>
+							<ExtendedTooltip name="ДекорацияРежимПроведенияРасширеннаяПодсказка" id="859"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_ОтвергатьНеизвестныеСвойства" id="860">
+							<DataPath>Настройки_ОтвергатьНеизвестныеСвойства</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отвергать неизвестные свойства</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ОтвергатьНеизвестныеСвойстваКонтекстноеМеню" id="861"/>
+							<ExtendedTooltip name="Настройки_ОтвергатьНеизвестныеСвойстваРасширеннаяПодсказка" id="862"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияОтвергатьНеизвестныеСвойства" id="863">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Без флажка неизвестное свойство тела пропускается, как у standard.odata. С флажком — 400 с именем свойства (строгий OData v4): опечатка клиента не потеряется молча.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияОтвергатьНеизвестныеСвойстваКонтекстноеМеню" id="864"/>
+							<ExtendedTooltip name="ДекорацияОтвергатьНеизвестныеСвойстваРасширеннаяПодсказка" id="865"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_СубконтоВНаборахЗаписей" id="866">
+							<DataPath>Настройки_СубконтоВНаборахЗаписей</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Субконто в строках регистров бухгалтерии</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_СубконтоВНаборахЗаписейКонтекстноеМеню" id="867"/>
+							<ExtendedTooltip name="Настройки_СубконтоВНаборахЗаписейРасширеннаяПодсказка" id="868"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияСубконтоВНаборахЗаписей" id="869">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Без флажка строки наборов движений регистров бухгалтерии — как у standard.odata, без субконто: проводку с субконто не записать. С флажком в строках есть ExtDimensionDr1…N и ExtDimensionCr1…N (без корреспонденции — ExtDimension1…N); K-е значение относится к K-му виду субконто счёта строки. Это отличие от standard.odata.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияСубконтоВНаборахЗаписейКонтекстноеМеню" id="870"/>
+							<ExtendedTooltip name="ДекорацияСубконтоВНаборахЗаписейРасширеннаяПодсказка" id="871"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_СохранятьСубконтоНаборов" id="2036">
+							<DataPath>Настройки_СохранятьСубконтоНаборов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сохранять субконто при изменении наборов движений</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_СохранятьСубконтоНаборовКонтекстноеМеню" id="2037"/>
+							<ExtendedTooltip name="Настройки_СохранятьСубконтоНаборовРасширеннаяПодсказка" id="2038"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияСохранятьСубконтоНаборов" id="2039">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Действует, пока субконто в строках выключены. Без флажка PATCH и PUT набора движений регистра бухгалтерии стирают субконто, как standard.odata. С флажком субконто переносятся из прежних строк по LineNumber строк тела (только виды, которые ведёт счёт строки): строка без номера или с новым номером — без субконто, повтор номера — 400, ни одного номера при непустом наборе — 400.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияСохранятьСубконтоНаборовКонтекстноеМеню" id="2040"/>
+							<ExtendedTooltip name="ДекорацияСохранятьСубконтоНаборовРасширеннаяПодсказка" id="2041"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшееЧислоОперацийBatch" id="872">
+							<DataPath>Настройки_НаибольшееЧислоОперацийBatch</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшее число операций в $batch</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшееЧислоОперацийBatchКонтекстноеМеню" id="873"/>
+							<ExtendedTooltip name="Настройки_НаибольшееЧислоОперацийBatchРасширеннаяПодсказка" id="874"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшееЧислоОперацийBatch" id="875">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пакет $batch с большим числом операций отклоняется целиком до выполнения — 400 с числом операций. Лимит профиля «Операций в $batch» действует, если он строже. Пусто или 0 — 100.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшееЧислоОперацийBatchКонтекстноеМеню" id="876"/>
+							<ExtendedTooltip name="ДекорацияНаибольшееЧислоОперацийBatchРасширеннаяПодсказка" id="877"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшийРазмерBatchМБ" id="878">
+							<DataPath>Настройки_НаибольшийРазмерBatchМБ</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольший размер $batch, МБ</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшийРазмерBatchМБКонтекстноеМеню" id="879"/>
+							<ExtendedTooltip name="Настройки_НаибольшийРазмерBatchМБРасширеннаяПодсказка" id="880"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшийРазмерBatchМБ" id="881">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тело $batch больше этого размера отклоняется до разбора — 413. Каждая операция пакета считается запросом для лимитов частоты профиля. Пусто или 0 — 10 МБ.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшийРазмерBatchМБКонтекстноеМеню" id="882"/>
+							<ExtendedTooltip name="ДекорацияНаибольшийРазмерBatchМБРасширеннаяПодсказка" id="883"/>
+						</LabelDecoration>
+						<InputField name="Настройки_ПроверкаСсылокЗаписи" id="911">
+							<DataPath>Настройки_ПроверкаСсылокЗаписи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Проверка ссылок в теле записи</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Объект существует и виден профилю</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ВидимостьПрофилю</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Объект существует (права 1С, без профиля)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Существование</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Не проверять (как standard.odata)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">НеПроверять</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_ПроверкаСсылокЗаписиКонтекстноеМеню" id="912"/>
+							<ExtendedTooltip name="Настройки_ПроверкаСсылокЗаписиРасширеннаяПодсказка" id="913"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияПроверкаСсылокЗаписи" id="914">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ссылка в теле записи (реквизит, строка табличной части, строка набора движений, @odata.bind, составное поле) должна вести на существующий объект, который субъект видит чтением: отборы профиля и RLS — те же, что при чтении. Иначе — 400 «Свойство X: объект не найден или недоступен» (одинаково для «нет» и «не видно»). Значение, которое уже было у объекта в этом поле, не проверяется. Объекты вне состава публикации проверяются только на существование. «Не проверять» позволяет записать ссылку на несуществующий или скрытый объект.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПроверкаСсылокЗаписиКонтекстноеМеню" id="915"/>
+							<ExtendedTooltip name="ДекорацияПроверкаСсылокЗаписиРасширеннаяПодсказка" id="916"/>
+						</LabelDecoration>
+						<InputField name="Настройки_КлючПриСоздании" id="917">
+							<DataPath>Настройки_КлючПриСоздании</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ref_Key при создании</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только субъекту без отборов строк профиля</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">БезОтборовПрофиля</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Разрешён всем</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Разрешён</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_КлючПриСозданииКонтекстноеМеню" id="918"/>
+							<ExtendedTooltip name="Настройки_КлючПриСозданииРасширеннаяПодсказка" id="919"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияКлючПриСоздании" id="920">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Переданный при создании Ref_Key занятого объекта даёт 409, в том числе если объект скрыт профилем: иначе появился бы дубль. Поэтому субъекту с отборами строк профиля Ref_Key по умолчанию запрещён (400): ответ 409 раскрывал бы существование скрытого объекта. «Разрешён всем» — как standard.odata; существование скрытого объекта тогда узнаётся по известному GUID.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияКлючПриСозданииКонтекстноеМеню" id="921"/>
+							<ExtendedTooltip name="ДекорацияКлючПриСозданииРасширеннаяПодсказка" id="922"/>
+						</LabelDecoration>
+						<InputField name="Настройки_СрокПовторовЗапросов" id="923">
+							<DataPath>Настройки_СрокПовторовЗапросов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок хранения ответов повторяемых запросов, ч</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_СрокПовторовЗапросовКонтекстноеМеню" id="924"/>
+							<ExtendedTooltip name="Настройки_СрокПовторовЗапросовРасширеннаяПодсказка" id="925"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияСрокПовторовЗапросов" id="926">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запрос записи с заголовком Repeatability-Request-ID (OData 4.01) или Idempotency-Key выполняется один раз: повтор с тем же ключом от того же субъекта получает сохранённый ответ без повторного выполнения; тот же ключ с другим запросом — 422. Ответ хранится столько часов (регламентное задание «Очистка OData4» удаляет старые). Пусто или 0 — 24 ч. Заголовок для клиента необязателен.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияСрокПовторовЗапросовКонтекстноеМеню" id="927"/>
+							<ExtendedTooltip name="ДекорацияСрокПовторовЗапросовРасширеннаяПодсказка" id="928"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_ПодробныеОшибкиЗаписи" id="929">
+							<DataPath>Настройки_ПодробныеОшибкиЗаписи</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подробные ошибки записи клиенту</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ПодробныеОшибкиЗаписиКонтекстноеМеню" id="930"/>
+							<ExtendedTooltip name="Настройки_ПодробныеОшибкиЗаписиРасширеннаяПодсказка" id="931"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<LabelDecoration name="ДекорацияПодробныеОшибкиЗаписи" id="932">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Без флажка текст исключения платформы или обработчика записи клиенту не отдаётся (в нём бывают тексты запросов и данные вне профиля): клиент получает сообщения пользователю (Сообщить) и общий текст, подробности — в журнале регистрации (событие OData4.Запись). С флажком текст причины — в message и error.details, как раньше. Включайте только для отладки.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПодробныеОшибкиЗаписиКонтекстноеМеню" id="933"/>
+							<ExtendedTooltip name="ДекорацияПодробныеОшибкиЗаписиРасширеннаяПодсказка" id="934"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаУдаление" id="120">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Удаление</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаУдалениеРасширеннаяПодсказка" id="121"/>
+					<ChildItems>
+						<InputField name="Настройки_РазрешитьФизическоеУдаление" id="122">
+							<DataPath>Настройки_РазрешитьФизическоеУдаление</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Режим DELETE</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Пометка удаления</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:boolean">false</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Физическое удаление по праву профиля</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:boolean">true</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РазрешитьФизическоеУдалениеКонтекстноеМеню" id="123"/>
+							<ExtendedTooltip name="Настройки_РазрешитьФизическоеУдалениеРасширеннаяПодсказка" id="124"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияУдаление" id="125">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>По умолчанию DELETE ставит пометку удаления. Физически удаляет Basic без профиля — по праву 1С «Удаление», субъект с профилем — ещё по правам профиля «Удаление» и «Физическое удаление»; для этого выполните пункты ниже.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияУдалениеКонтекстноеМеню" id="126"/>
+							<ExtendedTooltip name="ДекорацияУдалениеРасширеннаяПодсказка" id="127"/>
+						</LabelDecoration>
+						<Button name="ПроверитьУдаление" id="810">
+							<Type>UsualButton</Type>
+							<CommandName>Form.Command.ПроверитьУдаление</CommandName>
+							<ExtendedTooltip name="ПроверитьУдалениеРасширеннаяПодсказка" id="811"/>
+						</Button>
+						<Table name="ЧекЛистУдаления" id="812">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>10</HeightInTableRows>
+							<DataPath>ЧекЛистУдаления</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЧекЛистУдаленияКонтекстноеМеню" id="813"/>
+							<AutoCommandBar name="ЧекЛистУдаленияКоманднаяПанель" id="814">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЧекЛистУдаленияРасширеннаяПодсказка" id="815"/>
+							<SearchStringAddition name="ЧекЛистУдаленияСтрокаПоиска" id="816">
+								<AdditionSource>
+									<Item>ЧекЛистУдаления</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧекЛистУдаленияСтрокаПоискаКонтекстноеМеню" id="817"/>
+								<ExtendedTooltip name="ЧекЛистУдаленияСтрокаПоискаРасширеннаяПодсказка" id="818"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЧекЛистУдаленияСостояниеПросмотра" id="819">
+								<AdditionSource>
+									<Item>ЧекЛистУдаления</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧекЛистУдаленияСостояниеПросмотраКонтекстноеМеню" id="820"/>
+								<ExtendedTooltip name="ЧекЛистУдаленияСостояниеПросмотраРасширеннаяПодсказка" id="821"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЧекЛистУдаленияУправлениеПоиском" id="822">
+								<AdditionSource>
+									<Item>ЧекЛистУдаления</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЧекЛистУдаленияУправлениеПоискомКонтекстноеМеню" id="823"/>
+								<ExtendedTooltip name="ЧекЛистУдаленияУправлениеПоискомРасширеннаяПодсказка" id="824"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЧекЛистУдаленияСостояние" id="825">
+									<DataPath>ЧекЛистУдаления.Состояние</DataPath>
+									<Width>5</Width>
+									<ContextMenu name="ЧекЛистУдаленияСостояниеКонтекстноеМеню" id="826"/>
+									<ExtendedTooltip name="ЧекЛистУдаленияСостояниеРасширеннаяПодсказка" id="827"/>
+								</LabelField>
+								<LabelField name="ЧекЛистУдаленияПункт" id="828">
+									<DataPath>ЧекЛистУдаления.Пункт</DataPath>
+									<Width>20</Width>
+									<AutoCellHeight>true</AutoCellHeight>
+									<ContextMenu name="ЧекЛистУдаленияПунктКонтекстноеМеню" id="829"/>
+									<ExtendedTooltip name="ЧекЛистУдаленияПунктРасширеннаяПодсказка" id="830"/>
+								</LabelField>
+								<LabelField name="ЧекЛистУдаленияФакт" id="831">
+									<DataPath>ЧекЛистУдаления.Факт</DataPath>
+									<Width>60</Width>
+									<AutoCellHeight>true</AutoCellHeight>
+									<ContextMenu name="ЧекЛистУдаленияФактКонтекстноеМеню" id="832"/>
+									<ExtendedTooltip name="ЧекЛистУдаленияФактРасширеннаяПодсказка" id="833"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+						<InputField name="Настройки_ПоискСсылокПриУдалении" id="935">
+							<DataPath>Настройки_ПоискСсылокПриУдалении</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поиск ссылок при физическом удалении</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>До транзакции удаления (короткая блокировка)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ДоТранзакции</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>В транзакции под блокировкой (строго)</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">ВТранзакции</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_ПоискСсылокПриУдаленииКонтекстноеМеню" id="936"/>
+							<ExtendedTooltip name="Настройки_ПоискСсылокПриУдаленииРасширеннаяПодсказка" id="937"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияПоискСсылокПриУдалении" id="938">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Перед физическим удалением ищутся ссылки на объект (на большой базе — минуты). По умолчанию поиск идёт до транзакции удаления: объект на это время закрыт от изменения другими сеансами (повторный DELETE того же объекта — сразу 409), но не держит исключительную блокировку данных. «В транзакции» исключает ссылку, записанную во время поиска, ценой долгой блокировки.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПоискСсылокПриУдаленииКонтекстноеМеню" id="939"/>
+							<ExtendedTooltip name="ДекорацияПоискСсылокПриУдаленииРасширеннаяПодсказка" id="940"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСостав" id="300">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состав</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаСоставРасширеннаяПодсказка" id="301"/>
+					<ChildItems>
+						<LabelField name="СостояниеСостава" id="302">
+							<DataPath>СостояниеСостава</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="СостояниеСоставаКонтекстноеМеню" id="303"/>
+							<ExtendedTooltip name="СостояниеСоставаРасширеннаяПодсказка" id="304"/>
+						</LabelField>
+						<UsualGroup name="ГруппаКомандыСостава" id="305">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыСоставаРасширеннаяПодсказка" id="306"/>
+							<ChildItems>
+								<Button name="ЗаполнитьИзСтандартногоИнтерфейса" id="307">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ЗаполнитьИзСтандартногоИнтерфейса</CommandName>
+									<ExtendedTooltip name="ЗаполнитьИзСтандартногоИнтерфейсаРасширеннаяПодсказка" id="308"/>
+								</Button>
+								<Button name="ДобавитьВсёИзВетки" id="309">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ДобавитьВсёИзВетки</CommandName>
+									<ExtendedTooltip name="ДобавитьВсёИзВеткиРасширеннаяПодсказка" id="310"/>
+								</Button>
+								<Button name="ОбновитьПредупреждения" id="311">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОбновитьПредупреждения</CommandName>
+									<ExtendedTooltip name="ОбновитьПредупрежденияРасширеннаяПодсказка" id="312"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ДеревоСостава" id="313">
+							<Representation>Tree</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<Header>false</Header>
+							<DataPath>ДеревоСостава</DataPath>
+							<ContextMenu name="ДеревоСоставаКонтекстноеМеню" id="314"/>
+							<AutoCommandBar name="ДеревоСоставаКоманднаяПанель" id="315">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДеревоСоставаРасширеннаяПодсказка" id="316"/>
+							<SearchStringAddition name="ДеревоСоставаСтрокаПоиска" id="317">
+								<AdditionSource>
+									<Item>ДеревоСостава</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоСоставаСтрокаПоискаКонтекстноеМеню" id="318"/>
+								<ExtendedTooltip name="ДеревоСоставаСтрокаПоискаРасширеннаяПодсказка" id="319"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоСоставаСостояниеПросмотра" id="320">
+								<AdditionSource>
+									<Item>ДеревоСостава</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоСоставаСостояниеПросмотраКонтекстноеМеню" id="321"/>
+								<ExtendedTooltip name="ДеревоСоставаСостояниеПросмотраРасширеннаяПодсказка" id="322"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоСоставаУправлениеПоиском" id="323">
+								<AdditionSource>
+									<Item>ДеревоСостава</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоСоставаУправлениеПоискомКонтекстноеМеню" id="324"/>
+								<ExtendedTooltip name="ДеревоСоставаУправлениеПоискомРасширеннаяПодсказка" id="325"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeExpand">ДеревоСоставаПередРазворачиванием</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="ДеревоСоставаВключён" id="326">
+									<DataPath>ДеревоСостава.Включён</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>Directly</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоСоставаВключёнКонтекстноеМеню" id="327"/>
+									<ExtendedTooltip name="ДеревоСоставаВключёнРасширеннаяПодсказка" id="328"/>
+									<Events>
+										<Event name="OnChange">ДеревоСоставаВключёнПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<LabelField name="ДеревоСоставаПредставление" id="329">
+									<DataPath>ДеревоСостава.Представление</DataPath>
+									<ContextMenu name="ДеревоСоставаПредставлениеКонтекстноеМеню" id="330"/>
+									<ExtendedTooltip name="ДеревоСоставаПредставлениеРасширеннаяПодсказка" id="331"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+						<LabelField name="ОценкаРазмера" id="332">
+							<DataPath>ОценкаРазмера</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="ОценкаРазмераКонтекстноеМеню" id="333"/>
+							<ExtendedTooltip name="ОценкаРазмераРасширеннаяПодсказка" id="334"/>
+						</LabelField>
+						<Table name="ПредупрежденияСостава" id="335">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>4</HeightInTableRows>
+							<DataPath>ПредупрежденияСостава</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПредупрежденияСоставаКонтекстноеМеню" id="336"/>
+							<AutoCommandBar name="ПредупрежденияСоставаКоманднаяПанель" id="337">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПредупрежденияСоставаРасширеннаяПодсказка" id="338"/>
+							<SearchStringAddition name="ПредупрежденияСоставаСтрокаПоиска" id="339">
+								<AdditionSource>
+									<Item>ПредупрежденияСостава</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредупрежденияСоставаСтрокаПоискаКонтекстноеМеню" id="340"/>
+								<ExtendedTooltip name="ПредупрежденияСоставаСтрокаПоискаРасширеннаяПодсказка" id="341"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПредупрежденияСоставаСостояниеПросмотра" id="342">
+								<AdditionSource>
+									<Item>ПредупрежденияСостава</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредупрежденияСоставаСостояниеПросмотраКонтекстноеМеню" id="343"/>
+								<ExtendedTooltip name="ПредупрежденияСоставаСостояниеПросмотраРасширеннаяПодсказка" id="344"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПредупрежденияСоставаУправлениеПоиском" id="345">
+								<AdditionSource>
+									<Item>ПредупрежденияСостава</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПредупрежденияСоставаУправлениеПоискомКонтекстноеМеню" id="346"/>
+								<ExtendedTooltip name="ПредупрежденияСоставаУправлениеПоискомРасширеннаяПодсказка" id="347"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ПредупрежденияСоставаОбъект" id="348">
+									<DataPath>ПредупрежденияСостава.Объект</DataPath>
+									<ContextMenu name="ПредупрежденияСоставаОбъектКонтекстноеМеню" id="349"/>
+									<ExtendedTooltip name="ПредупрежденияСоставаОбъектРасширеннаяПодсказка" id="350"/>
+								</LabelField>
+								<LabelField name="ПредупрежденияСоставаТекст" id="351">
+									<DataPath>ПредупрежденияСостава.Текст</DataPath>
+									<ContextMenu name="ПредупрежденияСоставаТекстКонтекстноеМеню" id="352"/>
+									<ExtendedTooltip name="ПредупрежденияСоставаТекстРасширеннаяПодсказка" id="353"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПрофили" id="500">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Профили</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаПрофилиРасширеннаяПодсказка" id="501"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПрофилей" id="502">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Профиль назначается пользователю Basic («Пользователи») и токену («Токены»).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПрофилейКонтекстноеМеню" id="503"/>
+							<ExtendedTooltip name="ДекорацияПрофилейРасширеннаяПодсказка" id="504"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаКомандыПрофилей" id="505">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыПрофилейРасширеннаяПодсказка" id="506"/>
+							<ChildItems>
+								<Button name="СоздатьПрофиль" id="507">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.СоздатьПрофиль</CommandName>
+									<ExtendedTooltip name="СоздатьПрофильРасширеннаяПодсказка" id="508"/>
+								</Button>
+								<Button name="ИзменитьПрофиль" id="509">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ИзменитьПрофиль</CommandName>
+									<ExtendedTooltip name="ИзменитьПрофильРасширеннаяПодсказка" id="510"/>
+								</Button>
+								<Button name="ПометитьПрофильНаУдаление" id="511">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПометитьПрофильНаУдаление</CommandName>
+									<ExtendedTooltip name="ПометитьПрофильНаУдалениеРасширеннаяПодсказка" id="512"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="СписокПрофилей" id="515">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>10</HeightInTableRows>
+							<DataPath>СписокПрофилей</DataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="СписокПрофилейКонтекстноеМеню" id="516"/>
+							<AutoCommandBar name="СписокПрофилейКоманднаяПанель" id="517">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокПрофилейРасширеннаяПодсказка" id="518"/>
+							<SearchStringAddition name="СписокПрофилейСтрокаПоиска" id="526">
+								<AdditionSource>
+									<Item>СписокПрофилей</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПрофилейСтрокаПоискаКонтекстноеМеню" id="527"/>
+								<ExtendedTooltip name="СписокПрофилейСтрокаПоискаРасширеннаяПодсказка" id="528"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокПрофилейСостояниеПросмотра" id="529">
+								<AdditionSource>
+									<Item>СписокПрофилей</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПрофилейСостояниеПросмотраКонтекстноеМеню" id="530"/>
+								<ExtendedTooltip name="СписокПрофилейСостояниеПросмотраРасширеннаяПодсказка" id="531"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокПрофилейУправлениеПоиском" id="532">
+								<AdditionSource>
+									<Item>СписокПрофилей</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокПрофилейУправлениеПоискомКонтекстноеМеню" id="533"/>
+								<ExtendedTooltip name="СписокПрофилейУправлениеПоискомРасширеннаяПодсказка" id="534"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокПрофилейВыбор</Event>
+								<Event name="OnActivateRow">СписокПрофилейПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ПрофилиНаименование" id="520">
+									<DataPath>СписокПрофилей.Description</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Профиль</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПрофилиНаименованиеКонтекстноеМеню" id="521"/>
+									<ExtendedTooltip name="ПрофилиНаименованиеРасширеннаяПодсказка" id="522"/>
+								</LabelField>
+								<LabelField name="ПрофилиПометкаУдаления" id="523">
+									<DataPath>СписокПрофилей.DeletionMark</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пометка удаления</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПрофилиПометкаУдаленияКонтекстноеМеню" id="524"/>
+									<ExtendedTooltip name="ПрофилиПометкаУдаленияРасширеннаяПодсказка" id="525"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаПользователи" id="450">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаПользователиРасширеннаяПодсказка" id="451"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПользователей" id="452">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Без профиля действуют только права и RLS 1С; в строгом режиме Basic — 403.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПользователейКонтекстноеМеню" id="453"/>
+							<ExtendedTooltip name="ДекорацияПользователейРасширеннаяПодсказка" id="454"/>
+						</LabelDecoration>
+						<Table name="ПользователиПрофили" id="455">
+							<Representation>List</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>10</HeightInTableRows>
+							<DataPath>ПользователиПрофили</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ПользователиПрофилиКонтекстноеМеню" id="456"/>
+							<AutoCommandBar name="ПользователиПрофилиКоманднаяПанель" id="457">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ПользователиПрофилиРасширеннаяПодсказка" id="458"/>
+							<SearchStringAddition name="ПользователиПрофилиСтрокаПоиска" id="459">
+								<AdditionSource>
+									<Item>ПользователиПрофили</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиПрофилиСтрокаПоискаКонтекстноеМеню" id="460"/>
+								<ExtendedTooltip name="ПользователиПрофилиСтрокаПоискаРасширеннаяПодсказка" id="461"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ПользователиПрофилиСостояниеПросмотра" id="462">
+								<AdditionSource>
+									<Item>ПользователиПрофили</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиПрофилиСостояниеПросмотраКонтекстноеМеню" id="463"/>
+								<ExtendedTooltip name="ПользователиПрофилиСостояниеПросмотраРасширеннаяПодсказка" id="464"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ПользователиПрофилиУправлениеПоиском" id="465">
+								<AdditionSource>
+									<Item>ПользователиПрофили</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ПользователиПрофилиУправлениеПоискомКонтекстноеМеню" id="466"/>
+								<ExtendedTooltip name="ПользователиПрофилиУправлениеПоискомРасширеннаяПодсказка" id="467"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ПользователиПрофилиПользователь" id="468">
+									<DataPath>ПользователиПрофили.Пользователь</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Пользователь ИБ</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ПользователиПрофилиПользовательКонтекстноеМеню" id="469"/>
+									<ExtendedTooltip name="ПользователиПрофилиПользовательРасширеннаяПодсказка" id="470"/>
+								</LabelField>
+								<InputField name="ПользователиПрофилиПрофиль" id="471">
+									<DataPath>ПользователиПрофили.Профиль</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Профиль</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>Directly</EditMode>
+									<ContextMenu name="ПользователиПрофилиПрофильКонтекстноеМеню" id="472"/>
+									<ExtendedTooltip name="ПользователиПрофилиПрофильРасширеннаяПодсказка" id="473"/>
+									<Events>
+										<Event name="OnChange">ПрофильПользователяПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаТокены" id="600">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Токены</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаТокеныРасширеннаяПодсказка" id="601"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияТокенов" id="602">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Токен показывается один раз при выпуске, в базе — только его свёртка. Отзыв окончателен.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияТокеновКонтекстноеМеню" id="603"/>
+							<ExtendedTooltip name="ДекорацияТокеновРасширеннаяПодсказка" id="604"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаКомандыТокенов" id="605">
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыТокеновРасширеннаяПодсказка" id="606"/>
+							<ChildItems>
+								<Button name="ВыпуститьТокен" id="607">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ВыпуститьТокен</CommandName>
+									<ExtendedTooltip name="ВыпуститьТокенРасширеннаяПодсказка" id="608"/>
+								</Button>
+								<Button name="ОтозватьТокен" id="609">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОтозватьТокен</CommandName>
+									<ExtendedTooltip name="ОтозватьТокенРасширеннаяПодсказка" id="610"/>
+								</Button>
+								<Button name="ПродлитьТокен" id="611">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ПродлитьТокен</CommandName>
+									<ExtendedTooltip name="ПродлитьТокенРасширеннаяПодсказка" id="612"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="СписокТокенов" id="615">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HeightInTableRows>10</HeightInTableRows>
+							<DataPath>СписокТокенов</DataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="СписокТокеновКонтекстноеМеню" id="616"/>
+							<AutoCommandBar name="СписокТокеновКоманднаяПанель" id="617">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокТокеновРасширеннаяПодсказка" id="618"/>
+							<SearchStringAddition name="СписокТокеновСтрокаПоиска" id="638">
+								<AdditionSource>
+									<Item>СписокТокенов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТокеновСтрокаПоискаКонтекстноеМеню" id="639"/>
+								<ExtendedTooltip name="СписокТокеновСтрокаПоискаРасширеннаяПодсказка" id="640"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокТокеновСостояниеПросмотра" id="641">
+								<AdditionSource>
+									<Item>СписокТокенов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТокеновСостояниеПросмотраКонтекстноеМеню" id="642"/>
+								<ExtendedTooltip name="СписокТокеновСостояниеПросмотраРасширеннаяПодсказка" id="643"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокТокеновУправлениеПоиском" id="644">
+								<AdditionSource>
+									<Item>СписокТокенов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокТокеновУправлениеПоискомКонтекстноеМеню" id="645"/>
+								<ExtendedTooltip name="СписокТокеновУправлениеПоискомРасширеннаяПодсказка" id="646"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокТокеновВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="ТокеныНаименование" id="620">
+									<DataPath>СписокТокенов.Description</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Токен</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТокеныНаименованиеКонтекстноеМеню" id="621"/>
+									<ExtendedTooltip name="ТокеныНаименованиеРасширеннаяПодсказка" id="622"/>
+								</LabelField>
+								<LabelField name="ТокеныПрофиль" id="623">
+									<DataPath>СписокТокенов.Профиль</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Профиль</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТокеныПрофильКонтекстноеМеню" id="624"/>
+									<ExtendedTooltip name="ТокеныПрофильРасширеннаяПодсказка" id="625"/>
+								</LabelField>
+								<LabelField name="ТокеныСрокДействия" id="626">
+									<DataPath>СписокТокенов.СрокДействия</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок действия</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТокеныСрокДействияКонтекстноеМеню" id="627"/>
+									<ExtendedTooltip name="ТокеныСрокДействияРасширеннаяПодсказка" id="628"/>
+								</LabelField>
+								<LabelField name="ТокеныАктивен" id="629">
+									<DataPath>СписокТокенов.Активен</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Активен</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТокеныАктивенКонтекстноеМеню" id="630"/>
+									<ExtendedTooltip name="ТокеныАктивенРасширеннаяПодсказка" id="631"/>
+								</LabelField>
+								<LabelField name="ТокеныРазрешённыеIP" id="632">
+									<DataPath>СписокТокенов.РазрешённыеIP</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Разрешённые IP</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТокеныРазрешённыеIPКонтекстноеМеню" id="633"/>
+									<ExtendedTooltip name="ТокеныРазрешённыеIPРасширеннаяПодсказка" id="634"/>
+								</LabelField>
+								<LabelField name="ТокеныДатаПоследнегоИспользования" id="635">
+									<DataPath>СписокТокенов.ДатаПоследнегоИспользования</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Последнее использование</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ТокеныДатаПоследнегоИспользованияКонтекстноеМеню" id="636"/>
+									<ExtendedTooltip name="ТокеныДатаПоследнегоИспользованияРасширеннаяПодсказка" id="637"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЖурнал" id="128">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Журнал</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЖурналРасширеннаяПодсказка" id="129"/>
+					<ChildItems>
+						<InputField name="Настройки_УровеньЖурнала" id="130">
+							<DataPath>Настройки_УровеньЖурнала</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Уровень</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Выключен</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Выключен</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Только запись</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Запись</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Ошибки</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Ошибки</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Всё</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Всё</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_УровеньЖурналаКонтекстноеМеню" id="131"/>
+							<ExtendedTooltip name="Настройки_УровеньЖурналаРасширеннаяПодсказка" id="132"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_РежимЗаписиЖурнала" id="133">
+							<DataPath>Настройки_РежимЗаписиЖурнала</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Режим записи</v8:content>
+								</v8:item>
+							</Title>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Основной</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Основной</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Буферизованный</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Буферизованный</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_РежимЗаписиЖурналаКонтекстноеМеню" id="134"/>
+							<ExtendedTooltip name="Настройки_РежимЗаписиЖурналаРасширеннаяПодсказка" id="135"/>
+							<Events>
+								<Event name="OnChange">РежимЗаписиЖурналаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаПачка" id="136">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пачка</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПачкаРасширеннаяПодсказка" id="137"/>
+							<ChildItems>
+								<InputField name="Настройки_РазмерПачкиЖурнала" id="138">
+									<DataPath>Настройки_РазмерПачкиЖурнала</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Размер пачки, записей</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Настройки_РазмерПачкиЖурналаКонтекстноеМеню" id="139"/>
+									<ExtendedTooltip name="Настройки_РазмерПачкиЖурналаРасширеннаяПодсказка" id="140"/>
+									<Events>
+										<Event name="OnChange">ПачкаЖурналаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="Настройки_ИнтервалПачкиЖурнала" id="141">
+									<DataPath>Настройки_ИнтервалПачкиЖурнала</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Интервал пачки, с</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Настройки_ИнтервалПачкиЖурналаКонтекстноеМеню" id="142"/>
+									<ExtendedTooltip name="Настройки_ИнтервалПачкиЖурналаРасширеннаяПодсказка" id="143"/>
+									<Events>
+										<Event name="OnChange">ПачкаЖурналаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="ПредупреждениеБуфера" id="144">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Буфер журнала — в памяти сеанса.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ПредупреждениеБуфераКонтекстноеМеню" id="145"/>
+							<ExtendedTooltip name="ПредупреждениеБуфераРасширеннаяПодсказка" id="146"/>
+						</LabelDecoration>
+						<CheckBoxField name="Настройки_СохранятьПараметрыЗапроса" id="147">
+							<DataPath>Настройки_СохранятьПараметрыЗапроса</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сохранять параметры запроса</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_СохранятьПараметрыЗапросаКонтекстноеМеню" id="148"/>
+							<ExtendedTooltip name="Настройки_СохранятьПараметрыЗапросаРасширеннаяПодсказка" id="149"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="Настройки_СохранятьТекстОшибки" id="150">
+							<DataPath>Настройки_СохранятьТекстОшибки</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сохранять текст ошибки</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_СохранятьТекстОшибкиКонтекстноеМеню" id="151"/>
+							<ExtendedTooltip name="Настройки_СохранятьТекстОшибкиРасширеннаяПодсказка" id="152"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<CheckBoxField name="Настройки_ДублироватьЖурналВЖурналРегистрации" id="153">
+							<DataPath>Настройки_ДублироватьЖурналВЖурналРегистрации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>[Экспериментально] Дублировать в журнал регистрации</v8:content>
+								</v8:item>
+							</Title>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="Настройки_ДублироватьЖурналВЖурналРегистрацииКонтекстноеМеню" id="154"/>
+							<ExtendedTooltip name="Настройки_ДублироватьЖурналВЖурналРегистрацииРасширеннаяПодсказка" id="155"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</CheckBoxField>
+						<InputField name="Настройки_ЖурналОтказовВхода" id="1216">
+							<DataPath>Настройки_ЖурналОтказовВхода</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отказы входа (401 без учётных данных или токена)</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запросы без аутентификации может слать кто угодно, и при уровне «Ошибки» или «Всё» они засыпали бы журнал. «Не чаще раза в минуту на адрес» (по умолчанию) пишет первый отказ входа за минуту на сервис и адрес клиента (адрес — из доверенного заголовка прокси; без него все отказы считаются с одного адреса); «Каждый» — каждый отказ; «Не писать» — ни одного. Ошибки после входа пишутся всегда.</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<ChoiceList>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Не чаще раза в минуту на адрес</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Прореживать</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Каждый</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">Все</Value>
+									</xr:Value>
+								</xr:Item>
+								<xr:Item>
+									<xr:Presentation/>
+									<xr:CheckState>0</xr:CheckState>
+									<xr:Value xsi:type="FormChoiceListDesTimeValue">
+										<Presentation>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Не писать</v8:content>
+											</v8:item>
+										</Presentation>
+										<Value xsi:type="xs:string">НеПисать</Value>
+									</xr:Value>
+								</xr:Item>
+							</ChoiceList>
+							<ContextMenu name="Настройки_ЖурналОтказовВходаКонтекстноеМеню" id="1217"/>
+							<ExtendedTooltip name="Настройки_ЖурналОтказовВходаРасширеннаяПодсказка" id="1218"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<UsualGroup name="ГруппаСрок" id="156">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Срок хранения</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСрокРасширеннаяПодсказка" id="157"/>
+							<ChildItems>
+								<InputField name="Настройки_СрокХраненияЖурнала" id="158">
+									<DataPath>Настройки_СрокХраненияЖурнала</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Срок хранения, дней (0 — не удалять)</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Настройки_СрокХраненияЖурналаКонтекстноеМеню" id="159"/>
+									<ExtendedTooltip name="Настройки_СрокХраненияЖурналаРасширеннаяПодсказка" id="160"/>
+									<Events>
+										<Event name="OnChange">НастройкаПриИзменении</Event>
+									</Events>
+								</InputField>
+								<Button name="ОчиститьСтарыеЗаписи" id="161">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОчиститьСтарыеЗаписи</CommandName>
+									<ExtendedTooltip name="ОчиститьСтарыеЗаписиРасширеннаяПодсказка" id="162"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаОтбор" id="163">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Отбор</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="164"/>
+							<ChildItems>
+								<InputField name="ОтборНачало" id="165">
+									<DataPath>ОтборНачало</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Период с</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОтборНачалоКонтекстноеМеню" id="166"/>
+									<ExtendedTooltip name="ОтборНачалоРасширеннаяПодсказка" id="167"/>
+									<Events>
+										<Event name="OnChange">ОтборПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборКонец" id="168">
+									<DataPath>ОтборКонец</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>по</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОтборКонецКонтекстноеМеню" id="169"/>
+									<ExtendedTooltip name="ОтборКонецРасширеннаяПодсказка" id="170"/>
+									<Events>
+										<Event name="OnChange">ОтборПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборСтатус" id="171">
+									<DataPath>ОтборСтатус</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Статус</v8:content>
+										</v8:item>
+									</Title>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Все</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string"/>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>2xx</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">2xx</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>4xx</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">4xx</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>5xx</v8:content>
+													</v8:item>
+												</Presentation>
+												<Value xsi:type="xs:string">5xx</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ОтборСтатусКонтекстноеМеню" id="172"/>
+									<ExtendedTooltip name="ОтборСтатусРасширеннаяПодсказка" id="173"/>
+									<Events>
+										<Event name="OnChange">ОтборПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ОтборСубъект" id="174">
+									<DataPath>ОтборСубъект</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Субъект</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="ОтборСубъектКонтекстноеМеню" id="175"/>
+									<ExtendedTooltip name="ОтборСубъектРасширеннаяПодсказка" id="176"/>
+									<Events>
+										<Event name="OnChange">ОтборПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Журнал" id="177">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<DataPath>Список</DataPath>
+							<AutoRefresh>false</AutoRefresh>
+							<AutoRefreshPeriod>60</AutoRefreshPeriod>
+							<Period>
+								<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+								<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+								<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+							</Period>
+							<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+							<RestoreCurrentRow>false</RestoreCurrentRow>
+							<TopLevelParent xsi:nil="true"/>
+							<ShowRoot>true</ShowRoot>
+							<AllowRootChoice>false</AllowRootChoice>
+							<UpdateOnDataChange>Auto</UpdateOnDataChange>
+							<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+							<ContextMenu name="ЖурналКонтекстноеМеню" id="178"/>
+							<AutoCommandBar name="ЖурналКоманднаяПанель" id="179">
+								<ChildItems>
+									<Button name="ОбновитьЖурнал" id="700">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ОбновитьЖурнал</CommandName>
+										<ExtendedTooltip name="ОбновитьЖурналРасширеннаяПодсказка" id="701"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ЖурналРасширеннаяПодсказка" id="180"/>
+							<SearchStringAddition name="ЖурналСтрокаПоиска" id="181">
+								<AdditionSource>
+									<Item>Журнал</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЖурналСтрокаПоискаКонтекстноеМеню" id="182"/>
+								<ExtendedTooltip name="ЖурналСтрокаПоискаРасширеннаяПодсказка" id="183"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЖурналСостояниеПросмотра" id="184">
+								<AdditionSource>
+									<Item>Журнал</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЖурналСостояниеПросмотраКонтекстноеМеню" id="185"/>
+								<ExtendedTooltip name="ЖурналСостояниеПросмотраРасширеннаяПодсказка" id="186"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЖурналУправлениеПоиском" id="187">
+								<AdditionSource>
+									<Item>Журнал</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЖурналУправлениеПоискомКонтекстноеМеню" id="188"/>
+								<ExtendedTooltip name="ЖурналУправлениеПоискомРасширеннаяПодсказка" id="189"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<LabelField name="ЖурналДата" id="190">
+									<DataPath>Список.Дата</DataPath>
+									<ContextMenu name="ЖурналДатаКонтекстноеМеню" id="191"/>
+									<ExtendedTooltip name="ЖурналДатаРасширеннаяПодсказка" id="192"/>
+								</LabelField>
+								<LabelField name="ЖурналСервис" id="193">
+									<DataPath>Список.Сервис</DataPath>
+									<ContextMenu name="ЖурналСервисКонтекстноеМеню" id="194"/>
+									<ExtendedTooltip name="ЖурналСервисРасширеннаяПодсказка" id="195"/>
+								</LabelField>
+								<LabelField name="ЖурналСубъект" id="196">
+									<DataPath>Список.Субъект</DataPath>
+									<ContextMenu name="ЖурналСубъектКонтекстноеМеню" id="197"/>
+									<ExtendedTooltip name="ЖурналСубъектРасширеннаяПодсказка" id="198"/>
+								</LabelField>
+								<LabelField name="ЖурналПрофиль" id="199">
+									<DataPath>Список.Профиль</DataPath>
+									<ContextMenu name="ЖурналПрофильКонтекстноеМеню" id="200"/>
+									<ExtendedTooltip name="ЖурналПрофильРасширеннаяПодсказка" id="201"/>
+								</LabelField>
+								<LabelField name="ЖурналМетод" id="202">
+									<DataPath>Список.Метод</DataPath>
+									<ContextMenu name="ЖурналМетодКонтекстноеМеню" id="203"/>
+									<ExtendedTooltip name="ЖурналМетодРасширеннаяПодсказка" id="204"/>
+								</LabelField>
+								<LabelField name="ЖурналОперация" id="800">
+									<DataPath>Список.Операция</DataPath>
+									<Width>14</Width>
+									<ContextMenu name="ЖурналОперацияКонтекстноеМеню" id="801"/>
+									<ExtendedTooltip name="ЖурналОперацияРасширеннаяПодсказка" id="802"/>
+								</LabelField>
+								<LabelField name="ЖурналОбъект" id="803">
+									<DataPath>Список.Объект</DataPath>
+									<Width>30</Width>
+									<ContextMenu name="ЖурналОбъектКонтекстноеМеню" id="804"/>
+									<ExtendedTooltip name="ЖурналОбъектРасширеннаяПодсказка" id="805"/>
+								</LabelField>
+								<LabelField name="ЖурналПуть" id="205">
+									<DataPath>Список.Путь</DataPath>
+									<ContextMenu name="ЖурналПутьКонтекстноеМеню" id="206"/>
+									<ExtendedTooltip name="ЖурналПутьРасширеннаяПодсказка" id="207"/>
+								</LabelField>
+								<LabelField name="ЖурналСтатус" id="208">
+									<DataPath>Список.Статус</DataPath>
+									<ContextMenu name="ЖурналСтатусКонтекстноеМеню" id="209"/>
+									<ExtendedTooltip name="ЖурналСтатусРасширеннаяПодсказка" id="210"/>
+								</LabelField>
+								<LabelField name="ЖурналДлительность" id="211">
+									<DataPath>Список.Длительность</DataPath>
+									<ContextMenu name="ЖурналДлительностьКонтекстноеМеню" id="212"/>
+									<ExtendedTooltip name="ЖурналДлительностьРасширеннаяПодсказка" id="213"/>
+								</LabelField>
+								<LabelField name="ЖурналСтрок" id="214">
+									<DataPath>Список.Строк</DataPath>
+									<ContextMenu name="ЖурналСтрокКонтекстноеМеню" id="215"/>
+									<ExtendedTooltip name="ЖурналСтрокРасширеннаяПодсказка" id="216"/>
+								</LabelField>
+								<LabelField name="ЖурналПараметры" id="240">
+									<DataPath>Список.Параметры</DataPath>
+									<ContextMenu name="ЖурналПараметрыКонтекстноеМеню" id="241"/>
+									<ExtendedTooltip name="ЖурналПараметрыРасширеннаяПодсказка" id="242"/>
+								</LabelField>
+								<LabelField name="ЖурналТекстОшибки" id="243">
+									<DataPath>Список.ТекстОшибки</DataPath>
+									<ContextMenu name="ЖурналТекстОшибкиКонтекстноеМеню" id="244"/>
+									<ExtendedTooltip name="ЖурналТекстОшибкиРасширеннаяПодсказка" id="245"/>
+								</LabelField>
+								<LabelField name="ЖурналПакет" id="884">
+									<DataPath>Список.Пакет</DataPath>
+									<Width>12</Width>
+									<ContextMenu name="ЖурналПакетКонтекстноеМеню" id="885"/>
+									<ExtendedTooltip name="ЖурналПакетРасширеннаяПодсказка" id="886"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаАдреса" id="217">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адреса</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаАдресаРасширеннаяПодсказка" id="218"/>
+					<ChildItems>
+						<InputField name="Настройки_АдресПубликации" id="219">
+							<DataPath>Настройки_АдресПубликации</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адрес публикации Basic (odata)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_АдресПубликацииКонтекстноеМеню" id="220"/>
+							<ExtendedTooltip name="Настройки_АдресПубликацииРасширеннаяПодсказка" id="221"/>
+							<Events>
+								<Event name="OnChange">АдресПриИзменении</Event>
+							</Events>
+						</InputField>
+						<InputField name="Настройки_АдресПубликацииТокенов" id="222">
+							<DataPath>Настройки_АдресПубликацииТокенов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Адрес публикации токенов (odatat)</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_АдресПубликацииТокеновКонтекстноеМеню" id="223"/>
+							<ExtendedTooltip name="Настройки_АдресПубликацииТокеновРасширеннаяПодсказка" id="224"/>
+							<Events>
+								<Event name="OnChange">АдресПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelField name="АдресBasic" id="225">
+							<DataPath>АдресBasic</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Power BI / Excel, Basic</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="АдресBasicКонтекстноеМеню" id="226"/>
+							<ExtendedTooltip name="АдресBasicРасширеннаяПодсказка" id="227"/>
+						</LabelField>
+						<LabelField name="АдресТокен" id="228">
+							<DataPath>АдресТокен</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Токен</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="АдресТокенКонтекстноеМеню" id="229"/>
+							<ExtendedTooltip name="АдресТокенРасширеннаяПодсказка" id="230"/>
+						</LabelField>
+						<LabelDecoration name="ДекорацияPowerBI" id="231">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Power BI и Excel — адрес с токеном в пути, вход «Анонимный» (Excel: Данные → Получить данные → Из других источников → Из канала OData). Адрес с токеном попадает в журнал веб-сервера; без токена в адресе — пустой запрос Power Query: OData.Feed("…/hs/odatat/v4/", null, [Headers=[#"X-OData4-Token"="&lt;токен&gt;"]]).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияPowerBIКонтекстноеМеню" id="232"/>
+							<ExtendedTooltip name="ДекорацияPowerBIРасширеннаяПодсказка" id="233"/>
+						</LabelDecoration>
+						<InputField name="Настройки_ИсточникиCORS" id="234">
+							<DataPath>Настройки_ИсточникиCORS</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Источники CORS (https://host[:port], по одному в строке)</v8:content>
+								</v8:item>
+							</Title>
+							<Height>3</Height>
+							<MultiLine>true</MultiLine>
+							<ContextMenu name="Настройки_ИсточникиCORSКонтекстноеМеню" id="235"/>
+							<ExtendedTooltip name="Настройки_ИсточникиCORSРасширеннаяПодсказка" id="236"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияCORS" id="237">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Браузерам — публикация токенов (odatat, заголовок X-OData4-Token): на публикации Basic предварительный OPTIONS получает 401 до сервиса.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияCORSКонтекстноеМеню" id="238"/>
+							<ExtendedTooltip name="ДекорацияCORSРасширеннаяПодсказка" id="239"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаЛимиты" id="2031">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Лимиты</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаЛимитыРасширеннаяПодсказка" id="2032"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияЛимиты" id="2033">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Базовые лимиты запроса действуют всегда, и без профиля доступа; лимит профиля того же смысла действует, если он строже. Превышение — ответ 400 с фактом до выполнения запроса. Значения по умолчанию пропускают обычные запросы клиентов (Power BI, Excel).</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияЛимитыКонтекстноеМеню" id="2034"/>
+							<ExtendedTooltip name="ДекорацияЛимитыРасширеннаяПодсказка" id="2035"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшееЧислоРаскрытий" id="2001">
+							<DataPath>Настройки_НаибольшееЧислоРаскрытий</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшее число раскрытий $expand</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшееЧислоРаскрытийКонтекстноеМеню" id="2002"/>
+							<ExtendedTooltip name="Настройки_НаибольшееЧислоРаскрытийРасширеннаяПодсказка" id="2003"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшееЧислоРаскрытий" id="2004">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Раскрытия одного запроса: соединения навигационных свойств и табличные части раскрытых объектов (табличные части самого набора не считаются). Больше — 400 до выполнения. «$expand=*($expand=*($expand=*))» у документа даёт сотни соединений и минуты построения запроса. Пусто или 0 — 200.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшееЧислоРаскрытийКонтекстноеМеню" id="2005"/>
+							<ExtendedTooltip name="ДекорацияНаибольшееЧислоРаскрытийРасширеннаяПодсказка" id="2006"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшееЧислоЭлементовIn" id="2007">
+							<DataPath>Настройки_НаибольшееЧислоЭлементовIn</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшее число элементов списка in</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшееЧислоЭлементовInКонтекстноеМеню" id="2008"/>
+							<ExtendedTooltip name="Настройки_НаибольшееЧислоЭлементовInРасширеннаяПодсказка" id="2009"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшееЧислоЭлементовIn" id="2010">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Список in (…) длиннее — 400. Все значения списка — параметры запроса, а СУБД ограничивает их число (MS SQL — 2100 на запрос). Пусто или 0 — 500.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшееЧислоЭлементовInКонтекстноеМеню" id="2011"/>
+							<ExtendedTooltip name="ДекорацияНаибольшееЧислоЭлементовInРасширеннаяПодсказка" id="2012"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшееЧислоЭлементовOrderby" id="2013">
+							<DataPath>Настройки_НаибольшееЧислоЭлементовOrderby</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшее число элементов $orderby</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшееЧислоЭлементовOrderbyКонтекстноеМеню" id="2014"/>
+							<ExtendedTooltip name="Настройки_НаибольшееЧислоЭлементовOrderbyРасширеннаяПодсказка" id="2015"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшееЧислоЭлементовOrderby" id="2016">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>$orderby длиннее — 400 (и во вложенных опциях $expand). Условие продолжения страниц растёт с каждым элементом; если оно всё равно не помещается в пределы выражения, запрос получает 400 сразу, а не 500 на второй странице. Пусто или 0 — 32.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшееЧислоЭлементовOrderbyКонтекстноеМеню" id="2017"/>
+							<ExtendedTooltip name="ДекорацияНаибольшееЧислоЭлементовOrderbyРасширеннаяПодсказка" id="2018"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшаяДлинаСтроковогоЛитерала" id="2019">
+							<DataPath>Настройки_НаибольшаяДлинаСтроковогоЛитерала</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшая длина строкового литерала</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшаяДлинаСтроковогоЛитералаКонтекстноеМеню" id="2020"/>
+							<ExtendedTooltip name="Настройки_НаибольшаяДлинаСтроковогоЛитералаРасширеннаяПодсказка" id="2021"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшаяДлинаСтроковогоЛитерала" id="2022">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Строковый литерал в $filter, $apply и других выражениях длиннее этого числа символов — 400 (contains, eq и т. п. по длинным строкам). Пусто или 0 — 1000.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшаяДлинаСтроковогоЛитералаКонтекстноеМеню" id="2023"/>
+							<ExtendedTooltip name="ДекорацияНаибольшаяДлинаСтроковогоЛитералаРасширеннаяПодсказка" id="2024"/>
+						</LabelDecoration>
+						<InputField name="Настройки_НаибольшаяСложностьВыражения" id="2025">
+							<DataPath>Настройки_НаибольшаяСложностьВыражения</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Наибольшая сложность выражения, узлов</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Настройки_НаибольшаяСложностьВыраженияКонтекстноеМеню" id="2026"/>
+							<ExtendedTooltip name="Настройки_НаибольшаяСложностьВыраженияРасширеннаяПодсказка" id="2027"/>
+							<Events>
+								<Event name="OnChange">НастройкаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<LabelDecoration name="ДекорацияНаибольшаяСложностьВыражения" id="2028">
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Число узлов дерева разбора каждого выражения-отбора ($filter, filter шагов $apply, $filter раскрытия, Condition виртуальной таблицы). Больше — 400. Лимит профиля «Сложность фильтра» действует, если он строже. Пусто или 0 — 1000.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияНаибольшаяСложностьВыраженияКонтекстноеМеню" id="2029"/>
+							<ExtendedTooltip name="ДекорацияНаибольшаяСложностьВыраженияРасширеннаяПодсказка" id="2030"/>
+						</LabelDecoration>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Настройки_РежимВыдачи" id="53">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимРазбораТел" id="54">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимМетаданных" id="55">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_КэшМетаданных" id="56">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ПроверкаКонфигурации" id="57">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ВыдачаКоллекций" id="58">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РазмерПорцииВыдачи" id="59">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>6</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшееЧислоСтрокОтвета" id="60">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ИспользоватьКомпонентуДляРазбора" id="1">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СверкаДвижков" id="2">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимДат" id="3">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РазрешитьФизическоеУдаление" id="4">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_УровеньЖурнала" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимЗаписиЖурнала" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РазмерПачкиЖурнала" id="7">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ИнтервалПачкиЖурнала" id="8">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ДублироватьЖурналВЖурналРегистрации" id="9">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СохранятьПараметрыЗапроса" id="10">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СохранятьТекстОшибки" id="11">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СрокХраненияЖурнала" id="12">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ИсточникиCORS" id="13">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_АдресПубликации" id="14">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_АдресПубликацииТокенов" id="15">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеКомпоненты" id="16">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресBasic" id="17">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АдресТокен" id="18">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборНачало" id="19">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборКонец" id="20">
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборСтатус" id="21">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>10</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтборСубъект" id="22">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Список" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>InformationRegister.OData4_Журнал</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+		<Attribute name="АдресПоУмолчанию" id="24">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВерсияПриЧтении" id="25">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>15</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДеревоСостава" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состав публикации</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПолноеИмя" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Вид" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Включён" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Публикуется</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ключевое" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поле ключа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗагруженоДетей" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Загружено детей</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИсключённыеТЧ" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключённые табличные части</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИсключённыеПоля" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключённые поля</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПредупрежденияСостава" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предупреждения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Объект" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Текст" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Предупреждение</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ОценкаРазмера" id="28">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеСостава" id="29">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СоставИзменён" id="30">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СтрогийРежимBasic" id="31">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимПримененияПрофиля" id="32">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимПравСлужебногоПользователя" id="33">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ТокеныПродолжения" id="34">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СрокЖизниТокеновПродолжения" id="35">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СлужебныеПользователи" id="36">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СлужебныеУчётки" id="37">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Служебные учётки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пользователь" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>64</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отмечен" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Служебная</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПользователиПрофили" id="38">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи и профили</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пользователь" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ИБ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>64</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Профиль" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Профиль</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.OData4_Профили</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ПредупреждениеДоступа" id="39">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПрофилиПользователейИзменены" id="40">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СписокПрофилей" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Профили</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.OData4_Профили</MainTable>
+				<ListSettings/>
+			</Settings>
+		</Attribute>
+		<Attribute name="СписокТокенов" id="42">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Токены</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Catalog.OData4_Токены</MainTable>
+				<ListSettings/>
+			</Settings>
+		</Attribute>
+		<Attribute name="СнимокНастроек" id="43">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЧекЛистУдаления" id="44">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Что нужно для физического удаления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Состояние" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполнено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Пункт" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Условие</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Факт" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Факт</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ЧекЛистПроверен" id="45">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ПроверятьЗаполнение" id="46">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ТребоватьIfMatch" id="47">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РежимПроведения" id="48">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ОтвергатьНеизвестныеСвойства" id="49">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СубконтоВНаборахЗаписей" id="50">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшееЧислоОперацийBatch" id="51">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшийРазмерBatchМБ" id="52">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_РазрешитьBasicСлужебнымУчёткам" id="81">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ЗаголовокАдресаКлиента" id="82">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ДоверятьЗаголовкуАдресаКлиента" id="83">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ЧислоДоверенныхПрокси" id="84">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>2</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ЖурналОтказовВхода" id="85">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ПроверкаСсылокЗаписи" id="61">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_КлючПриСоздании" id="62">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СрокПовторовЗапросов" id="63">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ПодробныеОшибкиЗаписи" id="64">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_ПоискСсылокПриУдалении" id="65">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>20</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшееЧислоРаскрытий" id="201">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшееЧислоЭлементовIn" id="202">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшееЧислоЭлементовOrderby" id="203">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшаяДлинаСтроковогоЛитерала" id="204">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_НаибольшаяСложностьВыражения" id="205">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>5</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Настройки_СохранятьСубконтоНаборов" id="206">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗаписатьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать и закрыть</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаЗаписатьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Записать" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаЗаписать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Перечитать" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перечитать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаПеречитать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьЖурнал" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбновитьЖурнал</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОчиститьСтарыеЗаписи" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить старые записи</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОчиститьСтарыеЗаписи</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗаполнитьИзСтандартногоИнтерфейса" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Заполнить из стандартного интерфейса</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаЗаполнитьИзСтандартногоИнтерфейса</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ДобавитьВсёИзВетки" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить всё из ветки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаДобавитьВсёИзВетки</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьПредупреждения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить предупреждения</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОбновитьПредупреждения</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="СоздатьПрофиль" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаСоздатьПрофиль</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ИзменитьПрофиль" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаИзменитьПрофиль</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПометитьПрофильНаУдаление" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пометить на удаление</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаПометитьПрофильНаУдаление</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ВыпуститьТокен" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выпустить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаВыпуститьТокен</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтозватьТокен" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отозвать</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаОтозватьТокен</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПродлитьТокен" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Продлить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаПродлитьТокен</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ПроверитьУдаление" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить</v8:content>
+				</v8:item>
+			</Title>
+			<Action>КомандаПроверитьУдаление</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

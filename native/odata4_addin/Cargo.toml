@@ -1,0 +1,15 @@
+[package]
+name = "odata4_addin"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.87"
+license = "MIT"
+description = "Внешняя компонента Native API OData4Native: тонкая обёртка над odata4_core"
+
+[lib]
+name = "odata4_native"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+addin1c = "0.7"
+odata4_core = { path = "../odata4_core" }

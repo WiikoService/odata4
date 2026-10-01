@@ -1,0 +1,15 @@
+name: Предложение
+description: Новая возможность или улучшение
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Какую задачу нужно решить
+      description: Клиент (Power BI, интеграция, сайт…), что он делает и что сейчас мешает.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Как это могло бы работать

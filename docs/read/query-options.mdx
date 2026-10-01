@@ -1,0 +1,122 @@
+---
+title: "Параметры запроса"
+description: "$filter, $select, $orderby, $top, $skip, $count и $format"
+icon: "filter"
+---
+
+Параметры запроса переводятся в запрос 1С. Значения из адреса всегда передаются **параметрами запроса**, а не вставляются в его текст. Имена таблиц и полей берутся только из модели метаданных.
+
+## $filter
+
+```http
+GET /hs/odata/v4/Document_РеализацияТоваровУслуг?$filter=Date ge 2026-01-01T00:00:00Z and Posted eq true and Контрагент/ИНН eq '7701234567'
+```
+
+### Операторы
+
+| Группа | Что поддерживается |
+|---|---|
+| Сравнение | `eq ne gt ge lt le` |
+| Логика | `and or not` |
+| Список | `in`: `Code in ('001','002')` (до 500 элементов, см. [Лимиты](/security/limits)) |
+| Арифметика | `add sub mul div mod`; деление на ноль даёт `null` |
+| Пустое значение | `eq null`: подходит и для пустой даты, пустого перечисления и пустой ссылки (они выдаются как `null`) |
+
+### Функции
+
+| Группа | Функции |
+|---|---|
+| Строки | `contains startswith endswith length tolower toupper trim indexof substring concat` |
+| Дата и время | `year month day hour minute second date time now` |
+| Числа | `round floor ceiling` |
+| Коллекции | `any`, `all` по табличным частям |
+
+```http
+$filter=contains(Description,'кабель')
+$filter=Товары/any(t: t/Количество gt 100)
+$filter=year(Date) eq 2026 and month(Date) le 3
+```
+
+### Перечисления
+
+Значение перечисления сравнивается по имени: `'Значение'` или `StandardODATA.ВидОперации'Продажа'`. Сравнение «больше-меньше» идёт в порядке значений в конфигурации, как в `$orderby`.
+
+### Составные поля
+
+Поля составного типа (`Recorder`, `ExtDimension1` и т. п.) сравниваются только через `eq` и `ne`:
+
+```http
+$filter=Recorder eq cast(guid'8a1b…','Document_РеализацияТоваровУслуг')
+$filter=ExtDimension1 eq cast('Основной','ВидыДоговоров')
+```
+
+### Строки неограниченной длины
+
+Такие реквизиты нельзя сравнивать и упорядочивать (`400`), но `contains` по ним работает.
+
+## Синтаксис OData v3
+
+Клиенты, которые писались под `standard.odata`, продолжают работать. Принимаются:
+
+- функция `substringof('часть', Description)`;
+- литералы `datetime'2026-01-01T00:00:00'`, `datetimeoffset'…'`, `guid'…'`, `time'…'`, `X'…'`, `binary'…'`;
+- суффиксы чисел `M L D F`;
+- `$inlinecount=allpages` вместо `$count=true`.
+
+## $select
+
+```http
+GET /hs/odata/v4/Catalog_Номенклатура?$select=Ref_Key,Code,Description
+```
+
+`@odata.context` ответа перечисляет выбранные свойства. Узкий `$select` заметно ускоряет большие выгрузки.
+
+## $orderby
+
+```http
+$orderby=Date desc,Number
+$orderby=Контрагент/Description
+```
+
+Принимаются выражения и пути через навигации, до 32 элементов. Порядок по ссылке упорядочивает **по самой ссылке**, а не по её представлению: так порядок однозначен и постраничное чтение не теряет строк. Порядок по наименованию задаётся явно: `$orderby=Контрагент/Description`. Это сознательное отличие — см. [Отличия от standard.odata](/reference/differences).
+
+## $top и $skip
+
+`$top` — сколько строк вернуть, `$skip` — сколько пропустить (не больше 10 000). Для обхода больших наборов используйте не `$skip`, а постраничное чтение по `@odata.nextLink` — см. [Страницы и большие выгрузки](/read/paging).
+
+## $count
+
+- `$count=true` добавляет в ответ `@odata.count` — число строк с учётом `$filter`;
+- `…/$count` возвращает только число (см. [Адреса и наборы](/read/urls)).
+
+## $format
+
+`$format=json` — ответ JSON (по умолчанию). Для `$metadata` `$format=json` выбирает CSDL JSON — см. [$metadata](/read/metadata).
+
+## Кодирование адреса
+
+<Warning>
+Пробел кодируйте как `%20`, а не `+`. Знак `+` вне литерала — это плюс, и сервис отвечает `400` с позицией символа. Внутри литералов `+` остаётся собой (`'9+33'`, `1e+2`, смещение часового пояса). Чтобы передать плюс наверняка, пишите `%2B`.
+</Warning>
+
+Ошибка разбора возвращается как `400` с текстом и позицией символа (с 1), с которой выражение перестало разбираться.
+
+## Отличия от OData
+
+Там, где `standard.odata` расходится со спецификацией OData, сервис ведёт себя как `standard.odata`:
+
+- `substring` считает позиции с 0;
+- `all` по пустой табличной части истинно;
+- `not` связывает сильнее `eq`, поэтому пишите `not (A eq B)` со скобками.
+
+## Что не поддерживается
+
+Ответ `501 Not Implemented`:
+
+- `$search`, `$compute` вне `$apply`, `$levels`;
+- оператор `has`;
+- функции `fractionalseconds totalseconds totaloffsetminutes mindatetime maxdatetime isof geo.* matchesPattern hassubset hassubsequence`;
+- `cast` к типам `Edm.*` и `cast` выражения;
+- литералы `binary` и `duration` в сравнениях.
+
+Агрегирование и группировка — через [$apply](/read/apply).

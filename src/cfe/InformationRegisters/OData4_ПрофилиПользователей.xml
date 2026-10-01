@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<InformationRegister uuid="a6747f24-a98c-4761-925b-3a8403f9876c">
+		<InternalInfo>
+			<xr:GeneratedType name="InformationRegisterRecord.OData4_ПрофилиПользователей" category="Record">
+				<xr:TypeId>577a62ef-e111-41f6-bd74-cdabf47186c5</xr:TypeId>
+				<xr:ValueId>73b7e6d7-4230-43a7-89ed-1165952e6b6d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterManager.OData4_ПрофилиПользователей" category="Manager">
+				<xr:TypeId>7ab2966a-484f-4df0-be65-c3cb1be3a7d6</xr:TypeId>
+				<xr:ValueId>81f29afa-6052-4d2b-b759-fc0e80ee85e5</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterSelection.OData4_ПрофилиПользователей" category="Selection">
+				<xr:TypeId>c06f699c-652e-428f-aa6f-9fe06b83b0ec</xr:TypeId>
+				<xr:ValueId>3459226a-b1a9-4291-a9e5-66b8002e8321</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterList.OData4_ПрофилиПользователей" category="List">
+				<xr:TypeId>5903c301-d630-4bee-a228-ad5228d81a13</xr:TypeId>
+				<xr:ValueId>be1e5a10-c5cf-4831-b70e-fe4d1d20bd98</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordSet.OData4_ПрофилиПользователей" category="RecordSet">
+				<xr:TypeId>8af36783-3814-4e92-b6b0-286522079635</xr:TypeId>
+				<xr:ValueId>041eff7e-a40f-4402-b8b0-08f5500e1cf4</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordKey.OData4_ПрофилиПользователей" category="RecordKey">
+				<xr:TypeId>beadcbff-4a38-4326-aaaf-18b7166dbff4</xr:TypeId>
+				<xr:ValueId>55b4ef31-ce19-47c9-8c41-5ebf3db0fa20</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="InformationRegisterRecordManager.OData4_ПрофилиПользователей" category="RecordManager">
+				<xr:TypeId>c6166332-ecd2-48c6-b0f3-b5601e7160ca</xr:TypeId>
+				<xr:ValueId>35915423-53ed-4e9d-b816-3e3660f1f92b</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>OData4_ПрофилиПользователей</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Профили пользователей OData4</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>true</UseStandardCommands>
+			<EditType>InDialog</EditType>
+			<InformationRegisterPeriodicity>Nonperiodical</InformationRegisterPeriodicity>
+			<WriteMode>Independent</WriteMode>
+			<MainFilterOnPeriod>false</MainFilterOnPeriod>
+			<DataLockControlMode>Managed</DataLockControlMode>
+		</Properties>
+		<ChildObjects>
+			<Resource uuid="07f5de42-0bad-4891-a0f0-cae7f0777748">
+				<Properties>
+					<Name>Профиль</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Профиль</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>cfg:CatalogRef.OData4_Профили</v8:Type>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Resource>
+			<Dimension uuid="1ce265b2-84ae-42c6-8ebc-801695a9cec5">
+				<Properties>
+					<Name>Пользователь</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ИБ</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>64</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Dimension>
+		</ChildObjects>
+	</InformationRegister>
+</MetaDataObject>

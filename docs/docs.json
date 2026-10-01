@@ -1,0 +1,109 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "OData4 для 1С",
+  "description": "Расширение 1С:Предприятия с интерфейсом OData v4: чтение, запись, $batch, токены и профили доступа.",
+  "colors": {
+    "primary": "#296FF6",
+    "light": "#6A9BFF",
+    "dark": "#1D3BF0"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/wiikoservice/odata4"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Скачать",
+      "href": "https://github.com/wiikoservice/odata4/releases/latest"
+    }
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Начало",
+        "pages": ["index", "quickstart", "comparison"]
+      },
+      {
+        "group": "Установка",
+        "pages": [
+          "install/requirements",
+          "install/extension",
+          "install/publication",
+          "install/roles",
+          "install/token-publication"
+        ]
+      },
+      {
+        "group": "Подключение",
+        "pages": ["connect/power-bi", "connect/excel", "connect/http-clients"]
+      },
+      {
+        "group": "Чтение данных",
+        "pages": [
+          "read/urls",
+          "read/query-options",
+          "read/expand",
+          "read/paging",
+          "read/registers",
+          "read/apply",
+          "read/metadata"
+        ]
+      },
+      {
+        "group": "Запись данных",
+        "pages": [
+          "write/basics",
+          "write/posting",
+          "write/record-sets",
+          "write/reliability",
+          "write/batch"
+        ]
+      },
+      {
+        "group": "Доступ и безопасность",
+        "pages": [
+          "security/overview",
+          "security/profiles",
+          "security/tokens",
+          "security/limits",
+          "security/cors"
+        ]
+      },
+      {
+        "group": "Администрирование",
+        "pages": [
+          "admin/settings",
+          "admin/composition",
+          "admin/journal",
+          "admin/native",
+          "admin/performance"
+        ]
+      },
+      {
+        "group": "Справка",
+        "pages": [
+          "reference/differences",
+          "reference/limitations",
+          "reference/errors",
+          "reference/faq",
+          "changelog"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/wiikoservice/odata4",
+      "website": "https://1unik.com"
+    }
+  }
+}

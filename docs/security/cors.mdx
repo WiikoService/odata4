@@ -1,0 +1,51 @@
+---
+title: "CORS"
+description: "Доступ из браузера: список источников и заголовки"
+icon: "globe"
+---
+
+Браузерное приложение на другом домене может обращаться к сервису, если его источник есть в списке CORS.
+
+## Список источников
+
+На вкладке «Адреса» формы настроек заполните список «Источники CORS», по одному значению в строке:
+
+```
+https://app.example.com
+http://localhost:5173
+```
+
+Формат — `scheme://host[:port]`. Значения `*` и `null` не принимаются, список проверяется при записи.
+
+## Заголовки ответа
+
+Ответ на запрос с источником из списка содержит:
+
+- `Access-Control-Allow-Origin` — этот источник;
+- `Vary: Origin`;
+- `Access-Control-Expose-Headers` — `Location`, `ETag`, `OData-EntityId`, `Preference-Applied`, `OData-Version`, `Retry-After`.
+
+Ответ на предварительный запрос `OPTIONS` дополнительно содержит:
+
+- `Access-Control-Allow-Methods` — `GET, POST, PUT, PATCH, MERGE, DELETE, OPTIONS`;
+- `Access-Control-Allow-Headers` — в том числе `X-OData4-Token`, `Content-Type`, `If-Match`, `If-None-Match`, `Prefer`;
+- `Access-Control-Max-Age`.
+
+`Access-Control-Allow-Credentials` не выдаётся: токен в заголовке не требует учётных данных браузера.
+
+## Почему браузеру нужны токены
+
+Предварительный запрос браузера к публикации с Basic-аутентификацией не доходит до сервиса: веб-модуль 1С сам отвечает `401` на `OPTIONS` без учётных данных. Поэтому браузерные клиенты работают с публикацией токенов `odatat`, где `OPTIONS` доходит до расширения, и передают токен в заголовке `X-OData4-Token`.
+
+```js
+const res = await fetch("https://server/base-svc/hs/odatat/v4/Catalog_Контрагенты?$top=10", {
+  headers: { "X-OData4-Token": token, "Accept": "application/json" }
+});
+const { value } = await res.json();
+```
+
+<Warning>
+Токен, встроенный в код браузерного приложения, виден любому пользователю этого приложения. Выдавайте такому токену профиль с минимальными правами, ограничением по IP и правилами частоты. Подробнее — на странице [Токены](/security/tokens).
+</Warning>
+
+Публикация токенов настраивается по странице [Публикация для токенов](/install/token-publication).

@@ -1,0 +1,102 @@
+---
+title: "Регистры и виртуальные таблицы"
+description: "Срезы, остатки, обороты и записи регистров"
+icon: "table"
+---
+
+## Записи регистров
+
+| Набор | Содержимое |
+|---|---|
+| `InformationRegister_КурсыВалют` | записи независимого регистра сведений |
+| `AccumulationRegister_ТоварыНаСкладах` | наборы движений по регистратору (свойство-коллекция `RecordSet`) |
+| `AccumulationRegister_ТоварыНаСкладах_RecordType` | отдельные записи (строки движений) |
+
+Ключи и чтение по ключу описаны в разделе [Адреса и наборы](/read/urls). Для выгрузки строк движений удобнее `…_RecordType`: к нему применимы `$filter`, `$select`, `$orderby` и постраничное чтение.
+
+## Виртуальные таблицы
+
+Виртуальные таблицы объявлены в `$metadata` как связанные функции (`Function IsBound="true"`) у коллекции регистра.
+
+| Регистр | Функции |
+|---|---|
+| Сведений (периодический) | `SliceLast`, `SliceFirst` |
+| Накопления | `Balance`, `Turnovers`, `BalanceAndTurnovers` |
+| Бухгалтерии | `Balance`, `Turnovers`, `BalanceAndTurnovers`, `ExtDimensions`, `RecordsWithExtDimensions` |
+
+Вызов принимается в двух формах: как у `standard.odata` и с пространством имён, как в OData 4.0.
+
+```http
+GET /hs/odata/v4/InformationRegister_КурсыВалют/SliceLast(Period=datetime'2026-03-01T00:00:00')
+GET /hs/odata/v4/InformationRegister_КурсыВалют/StandardODATA.SliceLast(Period=datetime'2026-03-01T00:00:00')
+```
+
+### Параметры
+
+Параметры те же, что у `standard.odata`:
+
+| Параметр | Смысл |
+|---|---|
+| `Period` | дата среза или остатков |
+| `StartPeriod`, `EndPeriod` | границы периода оборотов |
+| `Condition` | отбор по измерениям, синтаксис `$filter` |
+| `Dimensions` | измерения группировки результата |
+| `AccountCondition`, `BalancedAccountCondition` | отбор по счёту и корреспондирующему счёту |
+| `ExtraDimensions`, `BalancedExtraDimensions` | виды субконто |
+| `Order`, `Top` | порядок и число записей (`RecordsWithExtDimensions`) |
+| `Periodicity` | периодичность оборотов — расширение, см. ниже |
+
+```http
+GET /hs/odata/v4/AccumulationRegister_ТоварыНаСкладах/Balance(Period=datetime'2026-03-31T23:59:59',Condition='Склад_Key eq guid''…''')?$select=Номенклатура_Key,КоличествоBalance
+```
+
+В `Condition` нельзя ставить ресурсы, счёт регистра бухгалтерии и колонки, которые функция не заполняет (`Period`, `Recorder`, `LineNumber` у оборотов) — `400`. `Order` у `RecordsWithExtDimensions` проверяется, но не применяется, как и у `standard.odata`.
+
+### Группировка результата
+
+Результат остатков и оборотов всегда сгруппирован.
+
+- `Dimensions` явно задаёт измерения группировки.
+- Без `Dimensions` и с `$select` результат группируется, как у `standard.odata`, по упомянутым свойствам: выбранным в `$select`, отобранным в `$filter`, а у коллекции — ещё по `$orderby` и раскрытым навигациям.
+- Без `$select`, с `$select=*` и с `$apply` группировка идёт по всем измерениям.
+- `/$count` и `$count=true` считают группы.
+
+```http
+GET /hs/odata/v4/AccountingRegister_Хозрасчетный/Balance()?$select=СуммаBalance
+```
+
+Этот запрос вернёт одну строку — общий остаток.
+
+### Periodicity
+
+Необязательный параметр `Turnovers` и `BalanceAndTurnovers` регистров накопления и бухгалтерии. Это расширение интерфейса `standard.odata`.
+
+Значения (с учётом регистра): `Recorder`, `Record`, `Second`, `Minute`, `Hour`, `Day`, `Week`, `TenDays`, `Month`, `Quarter`, `HalfYear`, `Year`, `Auto`.
+
+```http
+GET /hs/odata/v4/AccumulationRegister_ТоварыНаСкладах/Turnovers(StartPeriod=datetime'2026-01-01T00:00:00',EndPeriod=datetime'2026-12-31T23:59:59',Periodicity='Month')
+```
+
+Периодичность заполняет колонку периода (`MonthPeriod` и т. п.), и она входит в ключ и группировку результата.
+
+- `Recorder` заполняет `Period` и `Recorder`.
+- `Record` дополнительно заполняет `LineNumber`.
+- `Auto` заполняет все колонки `…Period`, `Recorder` и `LineNumber`.
+
+Колонки других периодичностей в запросе дают `400` «Свойство не заполняется в результате функции». Как и в 1С, начало первого периода не раньше `StartPeriod`.
+
+### Раскрытие и агрегирование поверх результата
+
+- `$expand` навигаций работает и поверх остатков и оборотов: результат сначала группируется, затем к нему присоединяются связанные объекты.
+- К результату виртуальной таблицы применяются `$filter`, `$orderby`, `$top`, `$skip` и [$apply](/read/apply).
+
+## Регистры без ключевых полей
+
+Такой регистр получает ключ `SurrogateKey` со значением `0`, как в `standard.odata`. В `$filter`, `$orderby` и `$apply` он не участвует.
+
+## Не поддерживается
+
+- `DrCrTurnovers`;
+- виртуальные таблицы регистров расчёта.
+
+Запись наборов движений описана в разделе [Наборы движений](/write/record-sets).

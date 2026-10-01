@@ -1,0 +1,31 @@
+name: Ошибка
+description: Сервис отвечает не так, как описано в документации
+labels: [bug]
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: Запрос
+      description: Метод, адрес с параметрами и тело (без паролей и токенов).
+      render: http
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Что ожидалось и что получено
+      description: Статус и текст ответа. Если есть — ответ standard.odata на тот же запрос.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Версии
+      description: Версия OData4, платформы 1С, конфигурации; файловая или клиент-серверная база; Apache или IIS.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Журнал регистрации
+      description: События OData4.* за время запроса, если есть.

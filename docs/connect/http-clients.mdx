@@ -1,0 +1,150 @@
+---
+title: "curl, Postman и код"
+description: "Запросы к OData4 из curl, Postman, Python и JavaScript: вход, постраничная выдача, запись"
+icon: "terminal"
+---
+
+## Вход
+
+| Способ | Адрес | Как передать |
+|---|---|---|
+| Basic | `https://server/base/hs/odata/v4/` | заголовок `Authorization: Basic …` пользователя 1С |
+| Токен в заголовке | `https://server/base-svc/hs/odatat/v4/` | `X-OData4-Token: o4_…` |
+| Токен в пути | `https://server/base-svc/hs/odatat/t/o4_…/v4/` | — |
+| Токен в параметре | `https://server/base-svc/hs/odatat/v4/…?token=o4_…` | — |
+
+Заголовок надёжнее: адрес с токеном остаётся в журналах веб-сервера и прокси. Подробнее — [Токены](/security/tokens).
+
+<Warning>
+  **Пробел в адресе кодируйте как `%20`, а не `+`.** Знак `+` в OData — это плюс, и вне литерала сервис
+  отклоняет его с `400` и позицией символа. Многие библиотеки (`URLSearchParams` в JavaScript, `params` в
+  Python `requests`) по умолчанию кодируют пробел как `+` — формируйте строку запроса сами, как в примерах ниже.
+  Плюс внутри литерала записывайте как `%2B`.
+</Warning>
+
+## curl
+
+```bash
+# Служебный документ и метаданные
+curl -u "user:password" https://server/base/hs/odata/v4/
+curl -u "user:password" "https://server/base/hs/odata/v4/\$metadata?\$format=json"
+
+# Отбор, выбор колонок, порядок
+curl -u "user:password" "https://server/base/hs/odata/v4/Catalog_Номенклатура?\$select=Ref_Key,Code,Description&\$filter=startswith(Description,'Бумага')%20and%20DeletionMark%20eq%20false&\$orderby=Description"
+
+# Количество
+curl -u "user:password" "https://server/base/hs/odata/v4/Document_РеализацияТоваровУслуг/\$count"
+
+# Токен в заголовке
+curl -H "X-OData4-Token: o4_…" "https://server/base-svc/hs/odatat/v4/Catalog_Контрагенты?\$top=10"
+```
+
+## Postman
+
+1. Создайте запрос `GET` на `https://server/base/hs/odata/v4/Catalog_Номенклатура`.
+2. **Authorization → Basic Auth** с именем и паролем пользователя 1С, или заголовок `X-OData4-Token`.
+3. Параметры `$select`, `$filter`, `$top` добавляйте на вкладке **Params**; проверьте, что пробелы в адресе
+   закодированы как `%20`.
+4. Для записи: метод `POST`/`PATCH`, **Body → raw → JSON**, заголовок `Content-Type: application/json`.
+
+## Постраничная выдача
+
+Коллекция приходит страницами по 1000 строк (размер задаёт настройка или заголовок
+`Prefer: odata.maxpagesize=N`). Пока в ответе есть `@odata.nextLink`, запрашивайте следующую страницу по нему
+как есть — ссылка уже содержит все параметры запроса. Подробнее — [Постраничная выдача](/read/paging).
+
+<CodeGroup>
+```python Python
+import requests
+from urllib.parse import quote
+
+BASE = "https://server/base/hs/odata/v4/"
+session = requests.Session()
+session.auth = ("user", "password")          # или session.headers["X-OData4-Token"] = "o4_…"
+session.headers["Prefer"] = "odata.maxpagesize=5000"
+
+SAFE = ",()/='"
+
+def odata_query(**options):
+    # quote кодирует пробел как %20, а не +
+    return "&".join(f"${k}={quote(v, safe=SAFE)}" for k, v in options.items())
+
+url = BASE + "Document_РеализацияТоваровУслуг?" + odata_query(
+    select="Ref_Key,Number,Date,СуммаДокумента",
+    filter="Date ge 2026-01-01T00:00:00Z and Posted eq true",
+)
+
+rows = []
+while url:
+    page = session.get(url, timeout=300)
+    page.raise_for_status()
+    data = page.json()
+    rows.extend(data["value"])
+    url = data.get("@odata.nextLink")
+
+print(len(rows))
+```
+
+```javascript JavaScript
+const BASE = "https://server/base-svc/hs/odatat/v4/";
+const headers = { "X-OData4-Token": "o4_…", Prefer: "odata.maxpagesize=5000" };
+
+const q = (options) =>
+  Object.entries(options)
+    .map(([k, v]) => `$${k}=${encodeURIComponent(v)}`) // пробел — %20
+    .join("&");
+
+let url = `${BASE}Catalog_Контрагенты?${q({ select: "Ref_Key,Description,ИНН", filter: "DeletionMark eq false" })}`;
+const rows = [];
+while (url) {
+  const res = await fetch(url, { headers });
+  if (!res.ok) throw new Error(`${res.status}: ${await res.text()}`);
+  const data = await res.json();
+  rows.push(...data.value);
+  url = data["@odata.nextLink"];
+}
+console.log(rows.length);
+```
+</CodeGroup>
+
+Браузерному приложению с другого домена нужен CORS — см. [CORS](/security/cors).
+
+## Запись
+
+Создание элемента справочника. Ответ — `201`, заголовок `Location` и созданный объект с `@odata.etag`:
+
+<CodeGroup>
+```bash curl
+curl -u "user:password" -X POST "https://server/base/hs/odata/v4/Catalog_Номенклатура" \
+  -H "Content-Type: application/json" \
+  -H "Idempotency-Key: 7d0f3c2e-5b1a-4c8e-9f4d-2a6b8e1c0d33" \
+  -d '{
+    "Description": "Бумага А4",
+    "Parent@odata.bind": "Catalog_Номенклатура(guid'\''a1b2c3d4-0000-0000-0000-000000000001'\'')"
+  }'
+```
+
+```python Python
+r = session.post(
+    BASE + "Catalog_Номенклатура",
+    json={"Description": "Бумага А4", "Parent_Key": "a1b2c3d4-0000-0000-0000-000000000001"},
+    headers={"Idempotency-Key": "7d0f3c2e-5b1a-4c8e-9f4d-2a6b8e1c0d33"},
+)
+r.raise_for_status()
+created = r.json()
+print(created["Ref_Key"], r.headers["Location"])
+```
+</CodeGroup>
+
+Изменение с проверкой версии — `PATCH` с `If-Match` из `@odata.etag`:
+
+```bash
+curl -u "user:password" -X PATCH "https://server/base/hs/odata/v4/Catalog_Номенклатура(guid'…')" \
+  -H "Content-Type: application/json" \
+  -H 'If-Match: W/"AAAAAAAAB9E="' \
+  -d '{"Description": "Бумага А4, 500 листов"}'
+```
+
+Заголовок `Idempotency-Key` (или `Repeatability-Request-ID`) делает повтор запроса безопасным: повтор с тем же
+ключом получит сохранённый ответ, а не создаст второй объект. Подробнее — [Запись](/write/basics) и
+[Надёжная запись](/write/reliability).

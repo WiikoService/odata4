@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Catalog uuid="e2fd59cc-75bb-4a84-b8eb-df5dfc6333a8">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.OData4_Профили" category="Object">
+				<xr:TypeId>b6153836-e538-4b3e-bd17-75c634110bed</xr:TypeId>
+				<xr:ValueId>fd5ff474-eb11-4214-bd6d-f6d83efd34af</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.OData4_Профили" category="Ref">
+				<xr:TypeId>d1b69c66-c590-461d-80ad-4373c4f89d7c</xr:TypeId>
+				<xr:ValueId>bc3fe774-f885-4005-9d96-f5a0f8d78e04</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.OData4_Профили" category="Selection">
+				<xr:TypeId>bc3a7dc4-b841-4fce-acdf-877f2dc166ad</xr:TypeId>
+				<xr:ValueId>27f10cd1-4c7a-4514-9139-522d894f415b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.OData4_Профили" category="List">
+				<xr:TypeId>5254e2a6-9a87-4fdc-a228-e24eaee1066f</xr:TypeId>
+				<xr:ValueId>bfd1fa7c-3d0a-4bd1-b254-1ddd734659ee</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.OData4_Профили" category="Manager">
+				<xr:TypeId>41337e86-098d-4ac2-a326-e321ddcbca9b</xr:TypeId>
+				<xr:ValueId>b004ccaf-831e-4edd-9cdc-d7eb855e18ab</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>OData4_Профили</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Профили OData4</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<Hierarchical>false</Hierarchical>
+			<CodeLength>0</CodeLength>
+			<DescriptionLength>100</DescriptionLength>
+			<CodeType>String</CodeType>
+			<CodeAllowedLength>Variable</CodeAllowedLength>
+			<Autonumbering>false</Autonumbering>
+			<DefaultPresentation>AsDescription</DefaultPresentation>
+			<InputByString>
+				<xr:Field>Catalog.OData4_Профили.StandardAttribute.Description</xr:Field>
+			</InputByString>
+			<DataLockControlMode>Managed</DataLockControlMode>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="ab325d43-7f48-4ca5-8f0c-38f8879d1746">
+				<Properties>
+					<Name>РазмерСтраницы</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Размер страницы</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="58e95c57-15f6-476b-a782-f3415b7f84a0">
+				<Properties>
+					<Name>НаибольшийTop</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Наибольший $top</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="990f7889-4244-459f-b127-3226de9c682b">
+				<Properties>
+					<Name>ГлубинаExpand</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Глубина $expand</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="94b466a0-d34b-46c4-b13b-5708988a18f5">
+				<Properties>
+					<Name>ШаговApply</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Шагов $apply</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="f427adad-617b-4c8a-a5c0-76cd19fcda90">
+				<Properties>
+					<Name>СложностьФильтра</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сложность $filter (узлов)</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="99eb51f8-d0cf-41f2-b2cf-0f40213a5543">
+				<Properties>
+					<Name>ОперацийBatch</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Операций в $batch</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+					<FillChecking>DontCheck</FillChecking>
+					<Indexing>DontIndex</Indexing>
+				</Properties>
+			</Attribute>
+			<TabularSection uuid="c8b37c20-2716-4a01-9a5a-5064a3467ab4">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.OData4_Профили.Права" category="TabularSection">
+						<xr:TypeId>99b52795-e1d8-4224-8d13-13e62eef0ace</xr:TypeId>
+						<xr:ValueId>a240dec3-1130-43a1-a87a-a00fa9e1f3af</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.OData4_Профили.Права" category="TabularSectionRow">
+						<xr:TypeId>f791f69d-3994-4ca0-8211-76c632aced6a</xr:TypeId>
+						<xr:ValueId>4b51c08a-8b07-4ede-8b08-14631727831f</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<Name>Права</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Права</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="7fd3eb09-ee1a-41c1-a1c6-3fa1781e69f7">
+						<Properties>
+							<Name>Объект</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объект</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>255</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="32572b05-b27d-4e5d-aa10-0f24527030d7">
+						<Properties>
+							<Name>Операция</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Операция</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>30</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="7cba1029-9a15-4fbd-85c9-d24412e269b3">
+						<Properties>
+							<Name>Разрешено</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Разрешено</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:boolean</v8:Type>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+			<TabularSection uuid="fb6be1ac-2c35-406b-95be-e4eba37d87b1">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.OData4_Профили.ИсключённыеПоля" category="TabularSection">
+						<xr:TypeId>745de127-20cf-45f9-98f8-7461dec094e7</xr:TypeId>
+						<xr:ValueId>8b314a57-3327-438c-ad02-1b5482709465</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.OData4_Профили.ИсключённыеПоля" category="TabularSectionRow">
+						<xr:TypeId>cf190e6e-2972-44aa-aee0-89391e451b8e</xr:TypeId>
+						<xr:ValueId>33e144b7-69b9-4355-a3c7-0570a3cbb666</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<Name>ИсключённыеПоля</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключённые поля</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="5583a5fb-75eb-4d13-87a3-081cb5e87b67">
+						<Properties>
+							<Name>Объект</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объект</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>255</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="8bca060d-e6c3-4188-b938-7e47a1c4bc89">
+						<Properties>
+							<Name>ТабличнаяЧасть</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Табличная часть</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>150</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="0ca94d0c-f05c-4972-b6f0-d702a26fdb90">
+						<Properties>
+							<Name>Поле</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поле</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>150</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+			<TabularSection uuid="80ed8c41-f226-4fb3-9e74-bcb0dca3c9f6">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.OData4_Профили.ОтборыОбъектов" category="TabularSection">
+						<xr:TypeId>11be8236-f4c7-4ffc-be8e-9197bd81a596</xr:TypeId>
+						<xr:ValueId>3adffcdb-c7ef-41ce-a81b-0a72fdb46f6f</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.OData4_Профили.ОтборыОбъектов" category="TabularSectionRow">
+						<xr:TypeId>9a79a400-31bd-4edb-afeb-4d541d00376c</xr:TypeId>
+						<xr:ValueId>ec8e5b28-cc26-4a86-83f6-9f6b523013b2</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<Name>ОтборыОбъектов</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы объектов</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="9695349d-f2f8-4aad-b449-0467ba8f8a1f">
+						<Properties>
+							<Name>Объект</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Объект</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>255</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="8ed6e492-8bdf-4540-a48e-9018c41a3b60">
+						<Properties>
+							<Name>Выражение</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Выражение $filter</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>0</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+			<TabularSection uuid="f02b247c-5d62-4786-9497-bc0bb7996e46">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.OData4_Профили.ОтборыШаблоны" category="TabularSection">
+						<xr:TypeId>e146df25-318f-4ca4-907a-b17be89354e4</xr:TypeId>
+						<xr:ValueId>36ea5308-2c74-4164-bd0c-6dd207c4fcd6</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.OData4_Профили.ОтборыШаблоны" category="TabularSectionRow">
+						<xr:TypeId>f185f784-221e-42af-a314-e8d9e7b17f88</xr:TypeId>
+						<xr:ValueId>4daed660-ada2-4710-81af-c6c6701e7cd5</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<Name>ОтборыШаблоны</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отборы-шаблоны</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="92b733f1-c41f-48ed-b0af-de3596c01bf6">
+						<Properties>
+							<Name>Реквизит</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Реквизит</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>150</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="b4b1172e-b99a-4855-9555-f9326a4754fe">
+						<Properties>
+							<Name>ТипЗначения</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тип значения (полное имя объекта метаданных)</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>255</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="9a921a32-1fda-482a-b555-ced4aa2117b7">
+						<Properties>
+							<Name>ИдентификаторЗначения</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Идентификатор значения (GUID)</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:string</v8:Type>
+								<v8:StringQualifiers>
+									<v8:Length>36</v8:Length>
+									<v8:AllowedLength>Variable</v8:AllowedLength>
+								</v8:StringQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+			<TabularSection uuid="eae5c5b6-ec23-419c-b831-38f0d5db875b">
+				<InternalInfo>
+					<xr:GeneratedType name="CatalogTabularSection.OData4_Профили.ЛимитыЧастоты" category="TabularSection">
+						<xr:TypeId>40f74977-d62e-45cd-a7fd-3d6a3a285d2d</xr:TypeId>
+						<xr:ValueId>67322c97-f4a2-495b-b16f-939c5a4ed217</xr:ValueId>
+					</xr:GeneratedType>
+					<xr:GeneratedType name="CatalogTabularSectionRow.OData4_Профили.ЛимитыЧастоты" category="TabularSectionRow">
+						<xr:TypeId>92b8e09c-6512-4ec6-97b9-da2afa8b17b0</xr:TypeId>
+						<xr:ValueId>65b44393-6d29-43b7-a9ba-422ff3d97cf0</xr:ValueId>
+					</xr:GeneratedType>
+				</InternalInfo>
+				<Properties>
+					<Name>ЛимитыЧастоты</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Лимиты частоты</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+				</Properties>
+				<ChildObjects>
+					<Attribute uuid="a8ae80e5-2bb4-4699-896f-9a8762c2de69">
+						<Properties>
+							<Name>Запросов</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запросов</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:decimal</v8:Type>
+								<v8:NumberQualifiers>
+									<v8:Digits>10</v8:Digits>
+									<v8:FractionDigits>0</v8:FractionDigits>
+									<v8:AllowedSign>Any</v8:AllowedSign>
+								</v8:NumberQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+					<Attribute uuid="5745ca93-dc70-4e2a-883c-b5b67dff3149">
+						<Properties>
+							<Name>Секунд</Name>
+							<Synonym>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Секунд</v8:content>
+								</v8:item>
+							</Synonym>
+							<Comment/>
+							<Type>
+								<v8:Type>xs:decimal</v8:Type>
+								<v8:NumberQualifiers>
+									<v8:Digits>10</v8:Digits>
+									<v8:FractionDigits>0</v8:FractionDigits>
+									<v8:AllowedSign>Any</v8:AllowedSign>
+								</v8:NumberQualifiers>
+							</Type>
+							<FillChecking>DontCheck</FillChecking>
+						</Properties>
+					</Attribute>
+				</ChildObjects>
+			</TabularSection>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>
