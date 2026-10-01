@@ -7,6 +7,10 @@ icon: "sliders-horizontal"
 Все настройки сервиса собраны в одной форме: раздел **OData4** → **Настройки OData4**. Открыть её может пользователь
 с ролью `OData4_Администратор`.
 
+<Frame caption="Раздел «OData4» → «Настройки OData4»">
+  <img src="/images/admin/app-section-odata4.png" alt="Раздел «OData4» → «Настройки OData4»" />
+</Frame>
+
 Настройки хранятся в информационной базе (регистр сведений `OData4_Настройки`, одна запись) и действуют
 **со следующего запроса**: перезапускать веб-сервер или завершать сеансы не нужно.
 
@@ -28,6 +32,10 @@ icon: "sliders-horizontal"
     - предупреждения об опасных настройках.
 
     Подробно: [Доступ и безопасность](/security/overview), [Токены](/security/tokens).
+
+    <Frame caption="Вкладка «Аутентификация»">
+      <img src="/images/admin/settings-auth.png" alt="Вкладка «Аутентификация»" />
+    </Frame>
   </Step>
   <Step title="Движки">
     Переключатели Rust-компоненты:
@@ -44,9 +52,17 @@ icon: "sliders-horizontal"
     - выдача коллекций: страницами или одним ответом.
 
     Подробно: [Rust-компонента](/admin/native), [Производительность](/admin/performance).
+
+    <Frame caption="Вкладка «Движки»">
+      <img src="/images/admin/settings-engines.png" alt="Вкладка «Движки»" />
+    </Frame>
   </Step>
   <Step title="Даты">
     Режим выдачи дат, см. [ниже](#режим-дат).
+
+    <Frame caption="Вкладка «Даты»">
+      <img src="/images/admin/settings-dates.png" alt="Вкладка «Даты»" />
+    </Frame>
   </Step>
   <Step title="Запись">
     - проверка заполнения перед записью;
@@ -61,6 +77,10 @@ icon: "sliders-horizontal"
     - лимиты `$batch`.
 
     Подробно: [Запись](/write/basics), [Надёжная запись](/write/reliability), [$batch](/write/batch).
+
+    <Frame caption="Вкладка «Запись»">
+      <img src="/images/admin/settings-write.png" alt="Вкладка «Запись»" />
+    </Frame>
   </Step>
   <Step title="Удаление">
     - режим `DELETE`: пометка удаления (по умолчанию) или физическое удаление по праву профиля;
@@ -69,10 +89,18 @@ icon: "sliders-horizontal"
       удаление доступно.
 
     Подробно: [Запись](/write/basics).
+
+    <Frame caption="Вкладка «Удаление»: режим DELETE и чек-лист физического удаления">
+      <img src="/images/admin/settings-delete.png" alt="Вкладка «Удаление»: режим DELETE и чек-лист физического удаления" />
+    </Frame>
   </Step>
   <Step title="Состав">
     Дерево объектов конфигурации с флажками. Здесь выбирается, что публикует сервис.
     Подробно: [Состав публикации](/admin/composition).
+
+    <Frame caption="Вкладка «Состав»">
+      <img src="/images/admin/settings-composition.png" alt="Вкладка «Состав»" />
+    </Frame>
   </Step>
   <Step title="Профили">
     Список профилей и карточка профиля:
@@ -84,16 +112,32 @@ icon: "sliders-horizontal"
     - правила частоты.
 
     Подробно: [Профили доступа](/security/profiles).
+
+    <Frame caption="Вкладка «Профили»">
+      <img src="/images/admin/settings-profiles.png" alt="Вкладка «Профили»" />
+    </Frame>
   </Step>
   <Step title="Пользователи">
     Сопоставление «пользователь ИБ → профиль» для входа по Basic.
+
+    <Frame caption="Вкладка «Пользователи»">
+      <img src="/images/admin/settings-users.png" alt="Вкладка «Пользователи»" />
+    </Frame>
   </Step>
   <Step title="Токены">
     Кнопки «Выпустить», «Отозвать» и «Продлить». Значение токена показывается один раз, при выпуске.
     Подробно: [Токены](/security/tokens).
+
+    <Frame caption="Вкладка «Токены»">
+      <img src="/images/admin/settings-tokens.png" alt="Вкладка «Токены»" />
+    </Frame>
   </Step>
   <Step title="Журнал">
     Настройки журнала запросов и список записей с отбором. Подробно: [Журнал и мониторинг](/admin/journal).
+
+    <Frame caption="Вкладка «Журнал»">
+      <img src="/images/admin/settings-journal.png" alt="Вкладка «Журнал»" />
+    </Frame>
   </Step>
   <Step title="Адреса">
     - готовые адреса публикаций Basic (`odata`) и токенов (`odatat`);
@@ -101,10 +145,18 @@ icon: "sliders-horizontal"
     - список источников CORS.
 
     Подробно: [Power BI](/connect/power-bi), [CORS](/security/cors).
+
+    <Frame caption="Вкладка «Адреса»: готовые адреса и источники CORS">
+      <img src="/images/admin/settings-addresses.png" alt="Вкладка «Адреса»: готовые адреса и источники CORS" />
+    </Frame>
   </Step>
   <Step title="Лимиты">
     Базовые лимиты запроса, которые действуют всегда, даже без профиля: число раскрытий `$expand`, элементов
     `in` и `$orderby`, длина строкового литерала, сложность выражения. Подробно: [Лимиты запросов](/security/limits).
+
+    <Frame caption="Вкладка «Лимиты»">
+      <img src="/images/admin/settings-limits.png" alt="Вкладка «Лимиты»" />
+    </Frame>
   </Step>
 </Steps>
 

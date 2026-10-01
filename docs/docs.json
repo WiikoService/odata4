@@ -8,6 +8,9 @@
     "light": "#6A9BFF",
     "dark": "#1D3BF0"
   },
+  "icons": {
+    "library": "lucide"
+  },
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo/light.svg",
