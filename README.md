@@ -12,7 +12,7 @@ Power BI, Excel и ваши интеграции читают и пишут да
 
 [![Релиз](https://img.shields.io/github/v/release/wiikoservice/odata4?label=%D1%80%D0%B5%D0%BB%D0%B8%D0%B7&color=296FF6)](https://github.com/wiikoservice/odata4/releases/latest)
 [![Лицензия MIT](https://img.shields.io/badge/%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-MIT-111214)](LICENSE)
-[![1С 8.3.11+](https://img.shields.io/badge/1%D0%A1-8.3.11%2B-C6F432)](https://docs.wiiko.by/odata4/install/requirements)
+[![1С 8.3.20+](https://img.shields.io/badge/1%D0%A1-8.3.20%2B-C6F432)](https://docs.wiiko.by/odata4/install/requirements)
 [![OData v4](https://img.shields.io/badge/OData-v4.0%20%2F%204.01-296FF6)](https://www.odata.org/documentation/)
 
 [**Документация**](https://docs.1unic.com/) · [**Скачать**](https://github.com/wiikoservice/odata4/releases/latest) · [Быстрый старт](https://docs.1unic.com/quickstart) · [Вопросы и ошибки](https://github.com/wiikoservice/odata4/issues)
@@ -65,7 +65,7 @@ GET /base/hs/odata/v4/Document_РеализацияТоваровУслуг
 - **Скорость.** Модель строится лениво, `$metadata` кэшируется между сеансами. Необязательная компонента на Rust
   ускоряет выдачу JSON, разбор запросов и `$metadata`. Если компонента недоступна, работает код на языке 1С.
 - **Эксплуатация.** Форма «Настройки OData4» с составом публикации, профилями, токенами, журналом
-  и готовыми адресами для Power BI. Регламентная очистка, предупреждения об опасных настройках.
+  и готовыми адресами для Power BI. Очистка служебных данных, предупреждения об опасных настройках.
 - **Универсальность.** Всё строится по метаданным: работает в любой конфигурации, с БСП и без неё.
 
 ## Быстрый старт
