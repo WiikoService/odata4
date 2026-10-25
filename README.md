@@ -16,6 +16,7 @@ Power BI, Excel и ваши интеграции читают и пишут да
 [![OData v4](https://img.shields.io/badge/OData-v4.0%20%2F%204.01-296FF6)](https://www.odata.org/documentation/)
 
 [**Документация**](https://docs.wiiko.by/odata4) · [**Скачать**](https://github.com/wiikoservice/odata4/releases/latest) · [Быстрый старт](https://docs.wiiko.by/odata4/quickstart) · [Вопросы и ошибки](https://github.com/wiikoservice/odata4/issues)
+[**Документация**](https://docs.1unic.com/) · [**Скачать**](https://github.com/wiikoservice/odata4/releases/latest) · [Быстрый старт](https://docs.1unic.com/quickstart) · [Вопросы и ошибки](https://github.com/wiikoservice/odata4/issues)
 
 </div>
 
